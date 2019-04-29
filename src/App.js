@@ -1,37 +1,88 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavBar from './Components/navbar/navbar'
+import NavBar from './countainer/navbar/navbar'
 
-import Footer from './Components/footer/footer'
-import BigSale from './countainer/bigsale'
-import DiscountList from './countainer/discountList'
-import Filter from './Components/filter/filter'
+import Footer from './countainer/footer/footer'
+import BigSale from './countainer/bigsale/bigsale'
+import DiscountList from './countainer/discount List/discountList'
+import Filter from './countainer/filter/filter'
 import { connect } from 'react-redux'
-
-import CarouselPhoto from './Components/Carousel/carousalPhoto'
-import CarousalProduct from './Components/Carousel/CarausalProduct'
-import Sidebar from './Components/navbar/sidebar'
+import CarousalProduct from './countainer/Carousel/CarausalProduct'
+import Sidebar from './countainer/sidebar/sidebar'
 import {Container,Row,Col} from 'react-bootstrap';
 
-import SimpleProduct from './Components/grid/SimpleProduct'
-import GoodZoom from './Components/goodzoom/GoodZoom'
-import LoginComponenet from './Components/login sign up/login'
-import SignupComponenet from './Components/login sign up/signUP'
-import QuestionFormat from './Components/genericForm/genericform'
-import NewNAvbar from './Components/newnav/newNav'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import SimpleProduct from './countainer/grid/SimpleProduct'
+import GoodZoom from './countainer/goodzoom/GoodZoom'
+import LoginComponenet from './countainer/login sign up/login'
+import SignupComponenet from './countainer/login sign up/signUP'
+import QuestionFormat from './countainer/genericForm/genericform'
+import NewNAvbar from './countainer/newnav/newNav'
+import {Route, Switch, withRouter, Redirect, Link ,BrowserRouter} from "react-router-dom";
 
 class App extends Component {
 
   render() {
     const { menu,products,footer,discountProduct ,sidemenu,ZoomIMG,BigSaleSRC,CarouselPhotos,ProductImagelist} = this.props
- 
+    let routes = (
+      <Switch>
+          <Route
+            path='/login'
+            component={() => <LoginComponenet/>}
+          />
+          <Route
+            path='/signup'
+            component={() => <SignupComponenet/>}
+          />
+          <Route path="/" exact component={()=><div><NewNAvbar/><NavBar data={menu}/></div>}/>
+          <Redirect to="/"/>
+      </Switch>
+  );
+  if (this.props.isAuthenticated) {
+    routes = (
+        <Switch>
+            <Route path="/" exact component={()=><div><NewNAvbar/><NavBar data={menu}/></div>}/>
+            <Route
+              path='/sidebar'
+              component={() => <Sidebar data={sidemenu}/>}
+            />
+
+            <Route
+              path='/goodzoom'
+              component={() => <GoodZoom data={ProductImagelist}/>}
+            />
+            <Route
+              path='/Simpleproduct'
+              component={() => <SimpleProduct data={products}/>}
+            />
+            <Route
+              path='/footer'
+              component={() => <Footer data={footer}/>}
+            />
+            <Route
+              path='/bigsale'
+              component={() => <BigSale data={BigSaleSRC}/>}
+            />
+            <Route
+              path='/discount'
+              component={() => <DiscountList data={discountProduct}/>}
+            />
+            <Route
+              path='/carsoulProduct'
+              component={() => <CarousalProduct data={discountProduct}/>}
+            />
+            <Route
+              path='/questionform'
+              component={() => <QuestionFormat/>}
+            />
+            <Redirect to="/"/>
+        </Switch>
+    );
+}
     return (
-      <Router>
+      <BrowserRouter>
       <div className="App ">
         <Container>
-        <NewNAvbar/>
-        <NavBar data={menu}/>
+        
         <Link to="/login">   login</Link>
         <Link to="/sidebar">   sidebar</Link>
         <Link to="/signup">    signup</Link>
@@ -47,52 +98,14 @@ class App extends Component {
           {window.screen.width >=1000?<Col sm><Filter/></Col>:""}
           <Col sm={8}>
           {window.screen.width <=1000?<Col sm><Filter/></Col>:""}
-          <Route
-  path='/login'
-  component={() => <LoginComponenet/>}
-/>
-<Route
-  path='/sidebar'
-  component={() => <Sidebar data={sidemenu}/>}
-/>
-<Route
-  path='/signup'
-  component={() => <SignupComponenet/>}
-/>
-<Route
-  path='/goodzoom'
-  component={() => <GoodZoom data={ProductImagelist}/>}
-/>
-<Route
-  path='/Simpleproduct'
-  component={() => <SimpleProduct data={products}/>}
-/>
-<Route
-  path='/footer'
-  component={() => <Footer data={footer}/>}
-/>
-<Route
-  path='/bigsale'
-  component={() => <BigSale data={BigSaleSRC}/>}
-/>
-<Route
-  path='/discount'
-  component={() => <DiscountList data={discountProduct}/>}
-/>
-<Route
-  path='/carsoulProduct'
-  component={() => <CarousalProduct data={discountProduct}/>}
-/>
-<Route
-  path='/questionform'
-  component={() => <QuestionFormat/>}
-/>
+          {routes}
+
           </Col> 
           </Row>
         </Container>
         
  </div>
- </Router>
+ </BrowserRouter>
     );
   }
 }
