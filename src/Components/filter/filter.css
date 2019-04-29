@@ -1,0 +1,17 @@
+.sidefilter {
+    width: 300px;
+    position: fixed;
+
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+  }
+  @media screen and (max-width: 600px) {
+    .sidefilter {
+      width: 300px;
+      position: relative;
+      background: #eee;
+      overflow-x: hidden;
+      padding: 8px 0;
+    }
+  }

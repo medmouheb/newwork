@@ -1,0 +1,17 @@
+h3,p{
+  color:  blueviolet !important;
+}
+.productsGrid > img{
+  height: 200px !important;
+}
+.productsGrid{
+  display: flex;
+  flex-wrap: wrap;
+}
+.productsGrid >div{
+  margin: 5%
+}
+
+#zoom img {
+  width: 50% ;
+}
