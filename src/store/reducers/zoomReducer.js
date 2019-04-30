@@ -1,4 +1,4 @@
-import {ZoomIMG} from '../testdata'
+import {ZoomIMG} from '../../testdata'
 const initState ={
     ZoomIMG:{...ZoomIMG}
 }

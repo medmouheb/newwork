@@ -1,4 +1,4 @@
-import {ProductImagelist} from '../testdata'
+import {ProductImagelist} from '../../testdata'
 const initState ={
     ProductImagelist:[...ProductImagelist],
 }

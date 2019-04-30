@@ -1,4 +1,4 @@
-import {menu} from '../testdata'
+import {menu} from '../../testdata'
 const initState ={
     menu:[...menu]
 }

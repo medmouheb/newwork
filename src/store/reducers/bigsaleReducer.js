@@ -1,4 +1,4 @@
-import {BigSaleSRC} from '../testdata'
+import {BigSaleSRC} from '../../testdata'
 const initState ={
     BigSaleSRC:[...BigSaleSRC],
 }

@@ -1,4 +1,4 @@
-import {CarouselPhoto} from '../testdata'
+import {CarouselPhoto} from '../../testdata'
 const initState ={
     CarouselPhoto:[...CarouselPhoto],
 }

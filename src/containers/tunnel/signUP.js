@@ -1,7 +1,7 @@
 import React ,{Component} from 'react'
 import { Button, Form } from "react-bootstrap"
 import { connect } from 'react-redux'
-import {userSignup} from '../../actions/signup'
+import {userSignup} from '../../store/actions/signup'
 class SignupComponenet extends Component{
     state={
         fullName:"",

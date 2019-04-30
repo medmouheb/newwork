@@ -1,4 +1,4 @@
-import {sidemenu} from '../testdata'
+import {sidemenu} from '../../testdata'
 const initState ={
     sidemenu:[...sidemenu]
 }

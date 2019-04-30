@@ -1,4 +1,4 @@
-import {discountProduct} from '../testdata'
+import {discountProduct} from '../../testdata'
 const initState ={
   discountProduct:[...discountProduct],
 }

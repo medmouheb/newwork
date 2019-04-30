@@ -1,4 +1,4 @@
-import {footer} from '../testdata'
+import {footer} from '../../testdata'
 const initState ={
     footer:[...footer],
 }

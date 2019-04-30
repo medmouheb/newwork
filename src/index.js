@@ -4,19 +4,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-import carouselReducer from './reducers/carouselReducer'
-import menuReducers from './reducers/menuReducers'
-import productReducer from './reducers/productReducer'
-import FooterReducer from './reducers/footerReducer'
-import discountProductReducer from './reducers/discountProductReducer' 
-import sidemenuReducer from './reducers/sidemenuReducer'
-import ZoomIMGReducer from './reducers/zoomReducer'
-import BigSaleSRCReducer from './reducers/bigsaleReducer'
-import CarouselPhotoReducer from './reducers/CarouselPhotoReducer'
-import filterReducer from './reducers/filterReducer'
-import ProductImagelistReducer from './reducers/ProductImage'
-import currentUserReducer from './reducers/currentUserReducer'
-import newUserReducer from './reducers/newUserReducer'
+import carouselReducer from './store/reducers/carouselReducer'
+import menuReducers from './store/reducers/menuReducers'
+import productReducer from './store/reducers/productReducer'
+import FooterReducer from './store/reducers/footerReducer'
+import discountProductReducer from './store/reducers/discountProductReducer' 
+import sidemenuReducer from './store/reducers/sidemenuReducer'
+import ZoomIMGReducer from './store/reducers/zoomReducer'
+import BigSaleSRCReducer from './store/reducers/bigsaleReducer'
+import CarouselPhotoReducer from './store/reducers/CarouselPhotoReducer'
+import filterReducer from './store/reducers/filterReducer'
+import ProductImagelistReducer from './store/reducers/ProductImage'
+import currentUserReducer from './store/reducers/currentUserReducer'
+import newUserReducer from './store/reducers/newUserReducer'
 import "react-alice-carousel/lib/alice-carousel.css";
 
 import { combineReducers,createStore,compose } from 'redux'

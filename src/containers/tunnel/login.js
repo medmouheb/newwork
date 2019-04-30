@@ -1,7 +1,7 @@
 import React ,{Component} from 'react'
 import { Button, Form } from "react-bootstrap"
 import { connect } from 'react-redux'
-import {userLogin} from '../../actions/login'
+import {userLogin} from '../../store/actions/login'
 class LoginComponenet extends Component{
     state={
         email:"",
