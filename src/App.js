@@ -4,7 +4,7 @@ import NavBar from './containers/common/navbar/navbar'
 
 import Footer from './containers/common/footer/footer'
 import BigSale from './containers/homePage/bigsale/bigsale'
-import DiscountList from './containers/homePage/discount List/discountList'
+import DiscountList from './containers/productListe/discount List/discountList'
 // import Filter from './containers/productsListPage/filter/filter'
 import { connect } from 'react-redux'
 import CarousalProduct from './containers/homePage/Carousel/CarausalProduct'
@@ -23,6 +23,7 @@ import Homepage from  './containers/homePage'
 import Common from './containers/common'
 import Tunnel from './containers/tunnel'
 import Productdetail from './containers/productDetailsPage'
+import ProductListe from './containers/productListe'
 class App extends Component {
 
   render() {
@@ -33,11 +34,12 @@ return(
   <Link to="/tunnel"> <button>  tunnel</button></Link>
   <Link to="/Homepage">  <button> sidebar</button></Link>
   <Link to="/Productdetail"> <button>Productdetail</button>   </Link>
+  <Link to="/productListe"> <button>productListe</button>   </Link>
   <Route path="/" exact component={()=><Common wrappedComponent={<Tunnel/>}/>}/>
   <Route path="/tunnel" exact component={()=><Common wrappedComponent={<Tunnel/>}/>}/>
   <Route path="/Homepage" exact component={()=><Common wrappedComponent={<Homepage/>}/>}/>
+  <Route path="/productListe" exact component={()=><Common wrappedComponent={<ProductListe/>}/>}/>
   <Route path="/Productdetail" exact component={()=><Common wrappedComponent={<Productdetail/>}/>}/>
-    
   </div>
   </BrowserRouter>
 )

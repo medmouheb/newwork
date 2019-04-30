@@ -392,4 +392,60 @@ let ProductImagelist=[
     "https://images.pexels.com/photos/1040626/pexels-photo-1040626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     "https://images.pexels.com/photos/207962/pexels-photo-207962.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
 ]
-export {footer,menu,images ,products,discountProduct,sidemenu,ZoomIMG,BigSaleSRC,CarouselPhoto,ProductImagelist}
+const CategorieTab=[
+    { name:"liste",
+     category:[
+     {
+       name:"product k",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product j",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product ll",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product kk",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product 154",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product 0000",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     }
+   ]},
+   { name:"liste",
+   category:[
+     {
+       name:"product k",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product j",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product ll",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product kk",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product 154",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product 0000",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     }
+   ]}
+   ]
+export {CategorieTab,footer,menu,images ,products,discountProduct,sidemenu,ZoomIMG,BigSaleSRC,CarouselPhoto,ProductImagelist}

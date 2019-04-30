@@ -8,12 +8,12 @@ import { connect } from 'react-redux'
 
 class Common extends Component{
     render(){
-        const { menu,products,footer} = this.props
+        const {CategorieTab,menu,products,footer} = this.props
 
         return(
             <div>
-                <NewNAvbar/>
                 <NavBar data={menu}/>
+                <NewNAvbar data={CategorieTab}/>
                 <SimpleProduct data={products}/>
                 <QuestionFormat/>
                 {this.props.wrappedComponent}
@@ -27,6 +27,7 @@ const mapStateToProps = (state) => {
         products: state.productReducer.products,
         menu: state.menuReducers.menu,
         footer: state.FooterReducer.footer,
+        CategorieTab:state.MegaMenuReducers.CategorieTab
     }
   }
 export default connect(mapStateToProps)(Common)

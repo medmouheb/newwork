@@ -58,15 +58,15 @@ body {
 }
 
 #dropdown:hover #dropdown-content {
+    background-color: #ccc;
+
   display: block;
 }
 
 /* Create three equal columns that floats next to each other */
 #column {
   float: left;
-  width: 33.33%;
   padding: 10px;
-  background-color: #ccc;
 }
 
 #column a {
@@ -81,11 +81,14 @@ body {
 #column a:hover {
   background-color: #ddd;
 }
-
+#row{
+  display: flex;
+  justify-content: space-around;
+}
 /* Clear floats after the columns */
 #row:after {
+  
   content: "";
-  display: table;
   clear: both;
 }
 

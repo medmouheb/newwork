@@ -25,9 +25,7 @@ class Searchbar extends Component {
           ]}
         />
           </Col>
-          <Col>
-          <Button variant="info"  >Search</Button>
-          </Col>
+          <span><Button variant="info"  >Search</Button></span>
         </Form.Row>
       </Form>
          

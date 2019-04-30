@@ -1,68 +1,12 @@
 import React,{Component} from 'react'
 import './newNav.css';
-const tab=[
- { name:"liste",
-  category:[
-  {
-    name:"product k",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product j",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product ll",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product kk",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product 154",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product 0000",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  }
-]},
-{ name:"liste",
-category:[
-  {
-    name:"product k",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product j",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product ll",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product kk",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product 154",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product 0000",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  }
-]}
-]
 
 class NewNAvbar extends Component{
     render(){
         return(
           <div>
         <div id="navbar">
-        {tab.map(element=>{
+        {this.props.data.map(element=>{
           return(
             <div id="dropdown">
             <button id="dropbtn">{element.name}
@@ -70,11 +14,11 @@ class NewNAvbar extends Component{
             </button>
             <div id="dropdown-content">  
               <div id="row">
-              {element.category.sort(function(a, b){return 0.5 - Math.random()}).map(el=>{
+              {element.category.map(el=>{
                 return(
                   <div id="column">
                   <h3>{el.name}</h3>
-                  {el.list.sort(function(a, b){return 0.5 - Math.random()}).map(elem=>{
+                  {el.list.map(elem=>{
                     return(<a href="#">{elem}</a>)
                   })}
                 </div>

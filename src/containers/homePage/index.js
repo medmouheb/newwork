@@ -3,7 +3,7 @@ import BigSale from './bigsale/bigsale'
 import CarousalProduct from './Carousel/CarausalProduct'
 import CarouselPhoto from './Carousel/carousalPhoto'
 import Filter from './filter/filter'
-import DiscountList from './discount List/discountList'
+import DiscountList from '../productListe/discount List/discountList'
 import { connect } from 'react-redux'
 import {Container,Row,Col} from 'react-bootstrap';
 
@@ -19,7 +19,6 @@ class Homepage extends Component{
                     <BigSale data={BigSaleSRC}/>
                     <CarousalProduct data={discountProduct}/>
                     <CarouselPhoto data={CarouselPhotos}/>
-                    <DiscountList data={discountProduct}/>
                     </Col> 
                 </Row>
             </Container>
