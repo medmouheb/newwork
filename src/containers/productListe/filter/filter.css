@@ -1,6 +1,7 @@
 .sidefilter {
   width: 300px;
-  position: fixed;
+  position: sticky;
+  top: 0;
 
   background: #eee;
   overflow-x: hidden;

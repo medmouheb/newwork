@@ -2,7 +2,9 @@ import React,{Component} from 'react'
 import './newNav.css';
 
 class NewNAvbar extends Component{
-    render(){
+  state={letestIndex:null}  
+  render(){
+
         return(
           <div>
         <div id="navbar">
@@ -14,16 +16,18 @@ class NewNAvbar extends Component{
             </button>
             <div id="dropdown-content">  
               <div id="row">
-              {element.category.map(el=>{
-                return(
-                  <div id="column">
-                  <h3>{el.name}</h3>
-                  {el.list.map(elem=>{
-                    return(<a href="#">{elem}</a>)
-                  })}
-                </div>
-                )
-              })}
+              {element.category.map((el,index)=>{
+                
+                  return(
+                    <div id="column">
+                    <h3>{el.name}</h3>
+                    {el.list.map(elem=>{
+                      return(<a href="#">{elem}</a>)
+                    })}
+                  </div>
+                  )
+                } )
+              }
                 
               </div>
             </div>
@@ -128,6 +132,16 @@ class NewNAvbar extends Component{
                   <a href="#">Link 1</a>
                   <a href="#">Link 2</a>
                   <a href="#">Link 3</a>
+                  <h3>Category 3</h3>
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                  <div >
+                  <h3>Category 3</h3>
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
                 </div>
                 <div id="column">
                   <h3>Category 3</h3>
@@ -138,11 +152,6 @@ class NewNAvbar extends Component{
               </div>
             </div>
           </div> 
-        </div>
-        <div style={{padding: '16px'}}>
-          <h3>Responsive Mega Menu (Full-width dropdown in navbar)</h3>
-          <p>Hover over the "Dropdown" link to see the mega menu.</p>
-          <p>Resize the browser window to see the responsive effect.</p>
         </div>
       </div>
         )

@@ -31,8 +31,9 @@ class GoodZoom extends Component{
         }
         return(
             <div className="img-zoom-container">
-                <div >
-                <div onMouseOver={handleShow} onMouseOut={handlehide}>
+            <div style={{display:"flex"}}>
+            <div >
+                <div style={{margin : "20px"}} onMouseOver={handleShow} onMouseOut={handlehide}>
                 <img   id="myimage" src={this.props.data[this.state.currentIndex]} width="300" height="240"/>
                 <img  id="normalImg" src={this.props.data[this.state.currentIndex]} width="300" height="240"/>
                 </div>
@@ -46,9 +47,9 @@ class GoodZoom extends Component{
                 </div>
                 </div>
 
-                <div style={{display:this.state.hide?"none":""}} id="myresult" className="img-zoom-result"></div>
-                <div style={{display:!this.state.hide?"none":""}}>
-                <Card style={{ width: '18rem' }}>
+                <div style={{display:this.state.hide?"none":"",margin : "20px"}} id="myresult" className="img-zoom-result"></div>
+                <div style={{display:!this.state.hide?"none":"",margin : "20px"}}>
+                <Card style={{ width: '18rem' ,margin : "20px"}}>
                     <Card.Body>
                         <Card.Title>Card Title</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
@@ -61,6 +62,8 @@ class GoodZoom extends Component{
                     </Card.Body>
                 </Card>
                 </div>
+            </div>
+                
             </div>
         )
     }

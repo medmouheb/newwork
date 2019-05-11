@@ -1,46 +1,54 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavBar from './containers/common/navbar/navbar'
+// import NavBar from './containers/common/navbar/navbar'
 
-import Footer from './containers/common/footer/footer'
-import BigSale from './containers/homePage/bigsale/bigsale'
-import DiscountList from './containers/productListe/discount List/discountList'
+// import Footer from './containers/common/footer/footer'
+// import BigSale from './containers/homePage/bigsale/bigsale'
+// import DiscountList from './containers/productListe/discount List/discountList'
 // import Filter from './containers/productsListPage/filter/filter'
 import { connect } from 'react-redux'
-import CarousalProduct from './containers/homePage/Carousel/CarausalProduct'
-import Sidebar from './containers/productDetailsPage/sidebar/sidebar'
-import {Container,Row,Col} from 'react-bootstrap';
+// import CarousalProduct from './containers/homePage/Carousel/CarausalProduct'
+// import Sidebar from './containers/productDetailsPage/sidebar/sidebar'
+// import {Container,Row,Col} from 'react-bootstrap';
 
-import SimpleProduct from './containers/common/grid/SimpleProduct'
-import GoodZoom from './containers/productDetailsPage/goodzoom/GoodZoom'
-import LoginComponenet from './containers/tunnel/login'
-import SignupComponenet from './containers/tunnel/signUP'
-import QuestionFormat from './containers/common/genericForm/genericform'
-import NewNAvbar from './containers/common/newnav/newNav'
+// import SimpleProduct from './containers/productListe/grid/SimpleProduct'
+// import GoodZoom from './containers/productDetailsPage/goodzoom/GoodZoom'
+// import LoginComponenet from './containers/tunnel/login'
+// import SignupComponenet from './containers/tunnel/signUP'
+// import QuestionFormat from './containers/common/genericForm/genericform'
+// import NewNAvbar from './containers/common/newnav/newNav'
 import {Route, Switch, withRouter, Redirect, Link ,BrowserRouter} from "react-router-dom";
+import {Container} from 'react-bootstrap';
 
 import Homepage from  './containers/homePage'
 import Common from './containers/common'
 import Tunnel from './containers/tunnel'
 import Productdetail from './containers/productDetailsPage'
 import ProductListe from './containers/productListe'
+import ProductListViewer from './containers/productListViewer/productListViewer'
+import DataTable from './containers/dataTable'
 class App extends Component {
 
   render() {
 
 return(
   <BrowserRouter>
-  <div>
-  <Link to="/tunnel"> <button>  tunnel</button></Link>
-  <Link to="/Homepage">  <button> sidebar</button></Link>
-  <Link to="/Productdetail"> <button>Productdetail</button>   </Link>
-  <Link to="/productListe"> <button>productListe</button>   </Link>
-  <Route path="/" exact component={()=><Common wrappedComponent={<Tunnel/>}/>}/>
-  <Route path="/tunnel" exact component={()=><Common wrappedComponent={<Tunnel/>}/>}/>
-  <Route path="/Homepage" exact component={()=><Common wrappedComponent={<Homepage/>}/>}/>
-  <Route path="/productListe" exact component={()=><Common wrappedComponent={<ProductListe/>}/>}/>
-  <Route path="/Productdetail" exact component={()=><Common wrappedComponent={<Productdetail/>}/>}/>
-  </div>
+  <Container>
+    <Link to="/Homepage">  <button> homePage</button></Link>
+    <Link to="/Productdetail"> <button>Productdetail</button></Link>
+    <Link to="/productListe"> <button>productListe</button></Link>
+    <Link to="/tunnel"> <button>  tunnel</button></Link>
+    <Link to="/ProductListViewer"> <button>  ProductListViewer</button></Link>
+    <Link to="/DataTable"> <button>  DataTable</button></Link>
+    <Route path="/" exact component={()=><Common wrappedComponent={<Homepage/>}/>}/>
+    <Route path="/Homepage" exact component={()=><Common wrappedComponent={<Homepage/>}/>}/>
+    <Route path="/DataTable" exact component={()=><Common wrappedComponent={<DataTable/>}/>}/>
+    <Route path="/ProductListViewer" exact component={()=><Common wrappedComponent={<ProductListViewer/>}/>}/>
+    <Route path="/productListe" exact component={()=><Common wrappedComponent={<ProductListe/>}/>}/>
+    <Route path="/Productdetail" exact component={()=><Common wrappedComponent={<Productdetail/>}/>}/>
+    <Route path="/tunnel" exact component={()=><Common wrappedComponent={<Tunnel/>}/>}/>
+
+  </Container>
   </BrowserRouter>
 )
     

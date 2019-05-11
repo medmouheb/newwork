@@ -19,6 +19,7 @@ import currentUserReducer from './store/reducers/currentUserReducer'
 import newUserReducer from './store/reducers/newUserReducer'
 import MegaMenuReducers from './store/reducers/megaMenu'
 import "react-alice-carousel/lib/alice-carousel.css";
+import DataTableReducer from './store/reducers/dataTableReducer'
 
 import { combineReducers,createStore,compose } from 'redux'
 import { Provider } from 'react-redux'
@@ -39,7 +40,8 @@ const rootReducer = combineReducers({
     ProductImagelistReducer,
     currentUserReducer,
     newUserReducer,
-    MegaMenuReducers
+    MegaMenuReducers,
+    DataTableReducer
 })
 const store = createStore(rootReducer,compose(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

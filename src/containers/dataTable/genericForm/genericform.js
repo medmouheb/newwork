@@ -1,40 +1,27 @@
 import React,{Component} from 'react';
 
-import {Form,Col,Row,Container} from 'react-bootstrap';
+import {Form,Col,Row,Container,Button} from 'react-bootstrap';
 
-const data=[
-    {
-        type:"text",
-        comment:"email",
-        text:"give us your email little nigga"
-    },
-    {
-        type:"text",
-        comment:"password"
-    },
-    {
-        type:"text",
-        comment:"normal",
-        label:"hate isemik"
-    },
-]
 
-class QuestionFormat extends Component{
+
+class GenericForme extends Component{
+    state={table:this.props.data}
 
     render(){
-
+        const handleModalChange=(index,value)=>{
+            let tab=this.state.table
+            tab[index]=value
+            this.setState({table:tab})
+        }
         return(
-            <Container>
-              <Row>
-              <Col xs={2}></Col>
-              <Col>
+
                 <Form>
-                    {data.map(element=>{
+                    {this.props.config.map((element,index)=>{
                         if(element.type==="text" && element.comment==="email"){
                             return(
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" />
+                                    <Form.Control  type="email" defaultValue={this.props.data[index]} onChange={(e)=>{handleModalChange(index,e.target.value)}} />
                                     <Form.Text className="text-muted">
                                     {element.text}
                                     </Form.Text>
@@ -45,7 +32,7 @@ class QuestionFormat extends Component{
                             return(
                                 <Form.Group controlId="formBasicPassword">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" placeholder="Password" />
+                                    <Form.Control type="password" defaultValue={this.props.data[index]} onChange={(e)=>{handleModalChange(index,e.target.value)}} />
                                 </Form.Group>
                             )
                         }
@@ -53,7 +40,7 @@ class QuestionFormat extends Component{
                             return(
                                 <Form.Group  controlId="formGridCity">
                                     <Form.Label>{element.label}</Form.Label>
-                                    <Form.Control />
+                                    <Form.Control defaultValue={this.props.data[index]} onChange={(e)=>{handleModalChange(index,e.target.value)}}/>
                                 </Form.Group>
                             )
                         }
@@ -118,14 +105,12 @@ class QuestionFormat extends Component{
                             )
                         }
                     })}
+                <Button onClick={()=>{this.props.modifiefunction(this.state.table)}}> submit </Button>
                 </Form>
-                </Col>
-                <Col xs={2}></Col>
-                </Row>
-            </Container>
+
             
         )
         
     }
 }
-export default QuestionFormat
+export default GenericForme

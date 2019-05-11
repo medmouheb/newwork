@@ -1,18 +1,26 @@
 import React, { Component } from 'react'
 import CarousalProduct from './discount List/discountList'
 import { connect } from 'react-redux'
-import SimpleProduct from '../productListe/grid/SimpleProduct'
+import SimpleProduct from './grid/SimpleProduct'
+import {Container,Row,Col} from 'react-bootstrap';
+import Filter from './filter/filter'
 
 
 class ProductListe extends Component {
     render() {
         const { discountProduct, products } = this.props
-        return (
-        <div>
-            <SimpleProduct data={products} />
-            <CarousalProduct data={discountProduct} />
-        </div>
-        )
+        return(
+            <Container>
+            <Row>
+                {window.screen.width >=1000?<Col sm><Filter/></Col>:""}
+                <Col sm={8}>
+                {window.screen.width <=1000?<Col sm><Filter/></Col>:""}
+                <SimpleProduct data={products} />
+                <CarousalProduct data={discountProduct} />
+                </Col> 
+            </Row>
+        </Container>
+    )
     }
 }
 const mapStateToProps = (state) => {

@@ -1,19 +1,19 @@
 import React,{Component} from 'react'
 import NewNAvbar from './newnav/newNav'
 import NavBar from './navbar/navbar'
-import QuestionFormat from './genericForm/genericform'
 import Footer from './footer/footer'
+import GreenNav from './green nav/greenNav'
 import { connect } from 'react-redux'
-
+import CategoriesNav from './cleanNav/categoriesNav'
 class Common extends Component{
     render(){
         const {CategorieTab,menu,products,footer} = this.props
 
         return(
-            <div>
+            <div className="Common">
                 <NavBar data={menu}/>
-                <NewNAvbar data={CategorieTab}/>
-                <QuestionFormat/>
+
+                <CategoriesNav data={CategorieTab}/>
                 {this.props.wrappedComponent}
                 <Footer data={footer}/>
             </div>

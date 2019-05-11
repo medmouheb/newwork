@@ -8,7 +8,7 @@ class Productdetail extends Component{
         const { sidemenu,ProductImagelist} = this.props
 
         return(
-            <div>
+            <div  >
                 <Sidebar data={sidemenu}/>
                 <GoodZoom data={ProductImagelist}/>
             </div>

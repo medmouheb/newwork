@@ -1,8 +1,10 @@
 * {box-sizing: border-box;}
 
-.img-zoom-container {
+.img-zoom-container  {
   position: relative;
-  display: flex
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .img-zoom-lens {
@@ -12,7 +14,9 @@
   width: 40px;
   height: 40px;
 }
-
+.zommGalary >img{
+  padding: 5px
+}
 .img-zoom-result {
   
   border: 1px solid #d4d4d4;

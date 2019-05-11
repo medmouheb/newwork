@@ -73,6 +73,111 @@ let products=[
         price:"2,200 TND",
         avalable:false
     },
+    {
+      src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/7/2/39572-large_default.jpg",
+      name:"TEMPERETED GLASS LENOVO A2020",
+      description:"TEMPERETED GLASS SAMSUNG LENOVO A2020 Protecteur d'écran en verre.",
+      price:"2,000 TND",
+      avalable:true
+  },
+  {
+      src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/6/5/39565-large_default.jpg",
+      name:"TEMPERETED GLASS EXPRESS PRIME",
+      description:"TEMPERETED GLASS SAMSUNG EXPRESS PRIME Protecteur d'écran en verre.",
+      price:"2,100 TND",
+      avalable:true
+  },
+  {
+      src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/7/8/39578-large_default.jpg",
+      name:"TEMPERETED GLASS LENOVO K5 PLUS",
+      description:"TEMPERETED GLASS SAMSUNG LENOVO K5 PLUS Protecteur d'écran en verre.",
+      price:"2,200 TND",
+      avalable:false
+  },
+  {
+    src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/7/2/39572-large_default.jpg",
+    name:"TEMPERETED GLASS LENOVO A2020",
+    description:"TEMPERETED GLASS SAMSUNG LENOVO A2020 Protecteur d'écran en verre.",
+    price:"2,000 TND",
+    avalable:true
+},
+{
+    src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/6/5/39565-large_default.jpg",
+    name:"TEMPERETED GLASS EXPRESS PRIME",
+    description:"TEMPERETED GLASS SAMSUNG EXPRESS PRIME Protecteur d'écran en verre.",
+    price:"2,100 TND",
+    avalable:true
+},
+{
+    src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/7/8/39578-large_default.jpg",
+    name:"TEMPERETED GLASS LENOVO K5 PLUS",
+    description:"TEMPERETED GLASS SAMSUNG LENOVO K5 PLUS Protecteur d'écran en verre.",
+    price:"2,200 TND",
+    avalable:false
+},
+{
+  src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/7/2/39572-large_default.jpg",
+  name:"TEMPERETED GLASS LENOVO A2020",
+  description:"TEMPERETED GLASS SAMSUNG LENOVO A2020 Protecteur d'écran en verre.",
+  price:"2,000 TND",
+  avalable:true
+},
+{
+  src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/6/5/39565-large_default.jpg",
+  name:"TEMPERETED GLASS EXPRESS PRIME",
+  description:"TEMPERETED GLASS SAMSUNG EXPRESS PRIME Protecteur d'écran en verre.",
+  price:"2,100 TND",
+  avalable:true
+},
+{
+  src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/7/8/39578-large_default.jpg",
+  name:"TEMPERETED GLASS LENOVO K5 PLUS",
+  description:"TEMPERETED GLASS SAMSUNG LENOVO K5 PLUS Protecteur d'écran en verre.",
+  price:"2,200 TND",
+  avalable:false
+},
+{
+  src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/7/2/39572-large_default.jpg",
+  name:"TEMPERETED GLASS LENOVO A2020",
+  description:"TEMPERETED GLASS SAMSUNG LENOVO A2020 Protecteur d'écran en verre.",
+  price:"2,000 TND",
+  avalable:true
+},
+{
+  src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/6/5/39565-large_default.jpg",
+  name:"TEMPERETED GLASS EXPRESS PRIME",
+  description:"TEMPERETED GLASS SAMSUNG EXPRESS PRIME Protecteur d'écran en verre.",
+  price:"2,100 TND",
+  avalable:true
+},
+{
+  src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/7/8/39578-large_default.jpg",
+  name:"TEMPERETED GLASS LENOVO K5 PLUS",
+  description:"TEMPERETED GLASS SAMSUNG LENOVO K5 PLUS Protecteur d'écran en verre.",
+  price:"2,200 TND",
+  avalable:false
+},
+{
+  src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/7/2/39572-large_default.jpg",
+  name:"TEMPERETED GLASS LENOVO A2020",
+  description:"TEMPERETED GLASS SAMSUNG LENOVO A2020 Protecteur d'écran en verre.",
+  price:"2,000 TND",
+  avalable:true
+},
+{
+  src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/6/5/39565-large_default.jpg",
+  name:"TEMPERETED GLASS EXPRESS PRIME",
+  description:"TEMPERETED GLASS SAMSUNG EXPRESS PRIME Protecteur d'écran en verre.",
+  price:"2,100 TND",
+  avalable:true
+},
+{
+  src:"https://d2j7t5u190oygv.cloudfront.net/img/p/3/9/5/7/8/39578-large_default.jpg",
+  name:"TEMPERETED GLASS LENOVO K5 PLUS",
+  description:"TEMPERETED GLASS SAMSUNG LENOVO K5 PLUS Protecteur d'écran en verre.",
+  price:"2,200 TND",
+  avalable:false
+},
 ]
 let footer=[
     {
@@ -329,6 +434,100 @@ const BigSaleSRC=[
     },
 ]
 const CarouselPhoto=[
+  { name:"liste",
+     category:[
+     {
+       name:"product k",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product j",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product ll",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product kk",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product 154",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product 0000",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+      name:"product k",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product j",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product ll",
+      list:["product 1","product 2","product 3"]
+    },
+    {
+      name:"product kk",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product 154",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+    },
+   ]},
+  { name:"liste",
+     category:[
+     {
+       name:"product k",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product j",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product ll",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product kk",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product 154",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product 0000",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+      name:"product k",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product j",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product ll",
+      list:["product 1","product 2","product 3"]
+    },
+    {
+      name:"product kk",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product 154",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+    },
+   ]},
     {
         src:"http://lorempixel.com/output/cats-q-c-640-480-1.jpg",
         paragraph:"Legend 1"
@@ -393,6 +592,53 @@ let ProductImagelist=[
     "https://images.pexels.com/photos/207962/pexels-photo-207962.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
 ]
 const CategorieTab=[
+  { name:"liste",
+     category:[
+     {
+       name:"product k",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product j",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product ll",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product kk",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product 154",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+       name:"product 0000",
+       list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+     },
+     {
+      name:"product k",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product j",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product ll",
+      list:["product 1","product 2","product 3"]
+    },
+    {
+      name:"product kk",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product 154",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+    },
+   ]},
     { name:"liste",
      category:[
      {
@@ -418,7 +664,27 @@ const CategorieTab=[
      {
        name:"product 0000",
        list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-     }
+     },
+     {
+      name:"product k",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product j",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product ll",
+      list:["product 1","product 2","product 3"]
+    },
+    {
+      name:"product kk",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
+    },
+    {
+      name:"product 154",
+      list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
+    },
    ]},
    { name:"liste",
    category:[
@@ -448,4 +714,64 @@ const CategorieTab=[
      }
    ]}
    ]
-export {CategorieTab,footer,menu,images ,products,discountProduct,sidemenu,ZoomIMG,BigSaleSRC,CarouselPhoto,ProductImagelist}
+
+const testTableData=[
+  [ "1" , 	"Alphabet puzzle", 	"2016/01/15" ,	"Done",	"1000"]	,
+  [ "2", 	"Layout for poster", 	"2016/01/31",	"Planned",	"1834"],	
+  [ "3", 	"Image creation", 	"2016/01/23",	"To Do",	"1500"]	,
+  [ "4", 	"Create font", 	"2016/02/26",	"Done",	"1200"]	,
+  [ "5", 	"Sticker production", 	"2016/02/18",	"Planned"	,"2100"],	
+  [ "6", 	"Glossy poster", 	"2016/03/17"	,"To Do",	"899"	],
+  [ "7", 	"Beer label", 	"2016/05/28",	"Confirmed",	"2499"],	
+  [ "8", 	"Shop sign"	, "2016/04/19",	"Offer"	,"1099"]	,
+  [ "9", 	"X-Mas decoration", 	"2016/10/31",	"Confirmed",	"1750"],	
+  [ "10", 	"Halloween invite"	, "2016/09/12"	,"Planned",	"400"]	,
+  [ "11", 	"Wedding announcement"	, "2016/07/09"	,"To Do",	"299"],	
+  [ "12"	, "Member pasport", 	"2016/06/22",	"Offer",	"149"	],
+  [ "13"	, "Drink tickets", 	"2016/11/01",	"Confirmed"	,"199"],	
+  [ "14"	, "Album cover	", "2017/03/15",	"To Do",	"4999"	],
+  [ "15"	, "Shipment box", 	"2017/02/08"	,"Offer"	,"1399"]	,
+  [ "16"	, "Wooden puzzle", 	"2017/01/11",	"Done"	,"1000"]	,
+  [ "17"	, "Fashion Layout", 	"2016/01/30",	"Planned"	,"1834"	],
+  [ "18"	, "Toy creation", 	"2016/01/10",	"To Do",	"1550"]	,
+  [ "19"	, "Create stamps"	, "2016/02/26"	,"Done",	"1220"]	,
+  [ "20"	, "Sticker design", 	"2017/02/18",	"Planned"	,"2100"],	
+  [ "21"	, "Poster rock concert", 	"2017/04/17"	,"To Do"	,"899"],	
+  [ "22"	, "Wine label", 	"2017/05/28",	"Confirmed",	"2799"]	,
+  [ "23", "	Shopping bag"	, "2017/04/19"	,"Offer",	"1299"]	,
+  [ "24", 	"Decoration for Easter", 	"2017/10/31",	"Confirmed"	,"1650"],	
+  [ "25"	, "Saint Nicolas colorbook"	, "2017/09/12"	,"Planned",	"510"]	,
+  [ "26"	, "Wedding invites	", "2017/07/09",	"To Do"	,"399"	],
+  [ "27", 	"Member pasport", 	"2017/06/22",	"Offer"	,"249"]	,
+  [ "28", 	"Drink tickets"	, "2017/11/01"	,"Confirmed"	,"199"	],
+  [ "29", 	"Blue-Ray cover"	, "2018/03/15	","To Do",	"1999"]	,
+  [ "30"	, "TV carton", 	"2019/02/08",	"Offer",	"1369"]
+]
+let testTableDataColumn=[
+{
+    type:"text",
+    comment:"normal",
+    label:"Order"
+},
+{
+  type:"text",
+  comment:"normal",
+  label:"Description"
+},
+{
+  type:"text",
+  comment:"normal",
+  label:"Deadline"
+},
+{
+  type:"text",
+  comment:"normal",
+  label:"Status"
+},
+{
+  type:"text",
+  comment:"normal",
+  label:"Amount"
+},
+]
+export {CategorieTab,footer,menu,images ,products,discountProduct,sidemenu,ZoomIMG,BigSaleSRC,CarouselPhoto,ProductImagelist,testTableData,testTableDataColumn}
