@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import SimpleProduct from './grid/SimpleProduct'
 import {Container,Row,Col} from 'react-bootstrap';
 import Filter from './filter/filter'
-
+import ProductListViewer from '../productListViewer/productListViewer'
 
 class ProductListe extends Component {
     render() {
@@ -12,12 +12,9 @@ class ProductListe extends Component {
         return(
             <Container>
             <Row>
-                {window.screen.width >=1000?<Col sm><Filter/></Col>:""}
-                <Col sm={8}>
-                {window.screen.width <=1000?<Col sm><Filter/></Col>:""}
-                <SimpleProduct data={products} />
+                <ProductListViewer/>
                 <CarousalProduct data={discountProduct} />
-                </Col> 
+                
             </Row>
         </Container>
     )

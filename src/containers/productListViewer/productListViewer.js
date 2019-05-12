@@ -3,6 +3,7 @@ import SimpleProduct from './grid/SimpleProduct'
 import ListOfProducts from './grid/listProduct'
 import {Container,Row,Col,Form,Pagination,ButtonGroup,Button} from 'react-bootstrap'
 import { connect } from 'react-redux'
+import Filter from '../productListe/filter/filter.js'
 class ProductListViewer extends Component{
     state={
         currentPage:1,
@@ -37,7 +38,7 @@ class ProductListViewer extends Component{
         }
         return(
             <Container>
-                <Row style={{backgroundColor:"gray"}}>
+                <Row style={{backgroundColor:"rgb(102, 153, 255)",height:"40px"}}>
                     <Col>
                         <Form>
                         <Form.Group  controlId="exampleForm.ControlSelect1">
@@ -95,9 +96,11 @@ class ProductListViewer extends Component{
                     </Col>
                 </Row>
                 <Row>
+                {window.screen.width >=1000?<Col sm><Filter/></Col>:""}
+                <Col sm={8}>
+                {window.screen.width <=1000?<Col sm><Filter/></Col>:""}
                     {this.state.display==='grid'?<SimpleProduct  data={currentProducts}/>:<ListOfProducts data={currentProducts}/>}
-                    
-                    
+                </Col>  
                 </Row>
                 
             </Container>
