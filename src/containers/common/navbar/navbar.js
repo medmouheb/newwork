@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 import Searchbar from './searchbar/searchbar'
-import { FormControl, Navbar, Form, Button, Nav, NavDropdown, Container, Row, Col, OverlayTrigger } from 'react-bootstrap';
+import Homepage from '../../../containers/homePage'
+import Tunnel from '../../../containers/tunnel'
+import Productdetail from '../../../containers/productDetailsPage'
+import ProductListe from '../../../containers/productListe'
+import ProductListViewer from '../../../containers/productListViewer/productListViewer'
+import DataTable from '../../../containers/dataTable'
+import ShoppingCart from '../../../containers/tunnel/shopping cart/shoppingCart'
+import Shipping from '../../../containers/tunnel/shopping cart/shipping/shipping'
+import Common from '../../../containers/common'
+
+import { Badge,FormControl, Navbar, Form, Button, Nav, NavDropdown, Container, Row, Col, OverlayTrigger } from 'react-bootstrap';
 import { connect } from 'react-redux'
+import { Link, Route, BrowserRouter } from "react-router-dom";
+import './navbar.css'
 
 class NavBar extends Component {
   constructor(props) {
@@ -9,20 +21,15 @@ class NavBar extends Component {
   }
 
   render() {
-    const formStyle =
-    {
-      backgroundColor: "gray",
-      borderRadius: "25px"
 
-    }
 
     const popover = (
-      <Form style={formStyle}> 
-       <Form.Group controlId="formBasicEmail">
-        <br />
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-      </Form.Group>
+      <Form style={{ zIndex: "6", backgroundColor: "gray", borderRadius: "25px" }} >
+        <Form.Group controlId="formBasicEmail">
+          <br />
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+        </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
@@ -33,21 +40,37 @@ class NavBar extends Component {
       </Button>
       </Form>
     )
+    const WhenConnected = (
+      <Form inline style={{ display: !this.props.isConnected ? "" : "none" }}>
+        <Button style={{ marginRight: "30px" }} variant="outline-primary">Sign up</Button>
+        <OverlayTrigger trigger="focus" placement="right" overlay={popover}>
+          <Button variant="outline-success">Log in</Button>
+        </OverlayTrigger>
+      </Form>
+    )
+    const WhenDisconnected = (
+      <Form inline style={{ display: this.props.isConnected ? "" : "none" }}>
+        <Button variant="primary"><Link style={{ color: "white" }} to="ShoppingCart"><i class='fab fa-opencart'></i>
+        </Link></Button>
+        <Button variant="success"><i class='far fa-address-card'></i>
+        </Button>
+      </Form>
+    )
     return (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse  >
           <Nav >
             {this.props.data.map(el => {
               if (el.type === "link") {
                 return (
-                  <Nav.Link href={el.adresee}>
-                    {el.name}
+                  <Nav.Link>
+                    <Link style={{ textDecoration: "none" }} to={el.adresee}>   {el.name}</Link>
                   </Nav.Link>
+
                 )
               }
-              else {
+              else if(el.type === "dropdown") {
                 return (
                   <NavDropdown title={el.name} id="basic-nav-dropdown">
                     {el.childrens.map(element => {
@@ -56,25 +79,43 @@ class NavBar extends Component {
                   </NavDropdown>
                 )
               }
+              else if(el.type === "secenddropdown"){
+                return(
+                  <NavDropdown title={el.name} id="basic-nav-dropdown">
+                    {el.childrens.map(element => {
+                      if( element.type =="normal")
+                      {return <NavDropdown.Item href={element.adresee}>{element.name}</NavDropdown.Item>}
+                      else {
+                        return(
+                          <NavDropdown title={element.name} id="basic-nav-dropdown">
+                            {element.grandChildrens.map(element0=>{return (<NavDropdown.Item href={element0.adresee}>{element0.name}</NavDropdown.Item>)})}
+                          
+                          </NavDropdown>
+                        )
+                      }
+                    })}
+                  </NavDropdown>
+                )
+              }
+              else if(el.type ==="logo"){
+                return(
+                  <Navbar.Brand  ><Link to="/"> <img alt={el.name} src={el.src} width="20"/></Link></Navbar.Brand>
+                )
+              }
+              else if(el.type ==="icon"){
+                return(<div> <img src={el.src} width="20"/> <h6><Badge variant="secondary">{el.name}</Badge></h6></div>)
+              }
             })}
           </Nav>
-          <Searchbar  />
-          <div style={{position:"absolute",right:"0"}}>
-          <Form inline style={{ display: this.props.isConnected ? "" : "none" }}>
-            <Button variant="primary">my Cart </Button>
-            <Button variant="success">my Account</Button>
-          </Form>
-          <Form inline style={{ display: !this.props.isConnected ? "" : "none" }}>
-            <Button variant="outline-primary">Sign up</Button>
-            <OverlayTrigger trigger="focus" placement="right" overlay={popover}>
-              <Button variant="outline-success">Log in</Button>
-            </OverlayTrigger>
-
-          </Form>
+          <Searchbar />
+          <div className="navbarButtons" >
+            {WhenConnected}
+            {WhenDisconnected}
           </div>
-          
+
         </Navbar.Collapse>
       </Navbar>
+
     )
 
   }

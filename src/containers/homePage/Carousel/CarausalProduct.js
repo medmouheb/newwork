@@ -21,10 +21,10 @@ class CarousalProduct extends Component{
                         <div className="discountpercent">{el.discount}</div>
                         <Card.Img  variant="top" src={el.src} />
                         <Card.Body>
-                        <Card.Title>{el.name}</Card.Title>
-                        <Card.Text>
-                            {el.price}
-                        </Card.Text>
+                          <Card.Title>{el.name}</Card.Title>
+                          <Card.Text>
+                              {el.price}
+                          </Card.Text>
                         </Card.Body>
                         <Card.Footer>
                         <small className="text-muted">{el.odldPrice}</small>

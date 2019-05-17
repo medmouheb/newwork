@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import {FormControl} from 'react-bootstrap';
+import {FormControl ,InputGroup,Button} from 'react-bootstrap';
 class Autocomplete extends Component {
   static propTypes = {
     suggestions: PropTypes.instanceOf(Array)
@@ -106,35 +106,35 @@ class Autocomplete extends Component {
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {
         suggestionsListComponent = (
-            <div className='suggestionsClass'>
-                <ul class="suggestions">
-                    {filteredSuggestions.map((suggestion, index) => {
-                    let className;
+          <div className='suggestionsClass'>
+            <ul class="suggestions">
+              {filteredSuggestions.map((suggestion, index) => {
+                let className;
 
-                    // Flag the active suggestion with a class
-                    if (index === activeSuggestion) {
-                        className = "suggestion-active";
-                    }
+                // Flag the active suggestion with a class
+                if (index === activeSuggestion) {
+                  className = "suggestion-active";
+                }
 
-                    return (
-                        <li
-                        className={className}
-                        key={suggestion}
-                        onClick={onClick}
-                        >
-                        {suggestion}
-                        </li>
-                    );
-                    })}
-                </ul>
-            </div>
-          
+                return (
+                  <li
+                    className={className}
+                    key={suggestion}
+                    onClick={onClick}
+                  >
+                    {suggestion}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
         );
       } else {
         suggestionsListComponent = (
           <div className='suggestionsClass'>
             <ul class="suggestions">
-              <li className = "suggestion-active">no result</li>
+              <li className="suggestion-active">no result</li>
             </ul>
           </div>
         );
@@ -142,18 +142,23 @@ class Autocomplete extends Component {
     }
 
     return (
-        
-      
+
+
       <Fragment className="search" >
-          <FormControl 
-            onBlur={()=>{this.setState({showSuggestions:false})}}
-            type="text" 
-            placeholder="Search" 
-            className="mr-sm-2" 
+        <InputGroup >
+          <FormControl
+            onBlur={() => { this.setState({ showSuggestions: false }) }}
+            placeholder="search"
+
             onChange={onChange}
             onKeyDown={onKeyDown}
             value={userInput}
-            />
+          />
+          <InputGroup.Append>
+            <Button variant="outline-secondary"><i class='fas fa-search'></i></Button>
+          </InputGroup.Append>
+        </InputGroup>
+
         {suggestionsListComponent}
       </Fragment>
     );

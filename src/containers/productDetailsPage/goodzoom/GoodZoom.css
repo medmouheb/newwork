@@ -6,10 +6,15 @@
   flex-direction: column;
   align-items: center;
 }
-
+#img-zoom-container{
+  display: flex
+}
+#imgToZoom{
+  margin: 20px
+}
 .img-zoom-lens {
   position: absolute;
-  border: 1px solid #d4d4d4;
+  border: 0px solid #d4d4d4;
   /*set the size of the lens:*/
   width: 40px;
   height: 40px;

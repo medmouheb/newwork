@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Card } from 'react-bootstrap'
+import { connect } from 'react-redux'
+import {addItem} from '../../../store/actions/shoppingCart'
 class ListOfProducts extends Component {
     render() {
         return (
@@ -16,7 +18,7 @@ class ListOfProducts extends Component {
                                     <Card.Text>
                                         {el.description}
                                     </Card.Text>
-                                    <Button variant="primary">add to card</Button>
+                                    <Button onClick={()=>{this.props.addItem(el)}} variant="primary">add to card</Button>
                                 </Card.Body>
                             </div>
 
@@ -30,4 +32,16 @@ class ListOfProducts extends Component {
         )
     }
 }
-export default ListOfProducts
+const mapStateToProps = (state) => {
+    
+"hey"
+    
+  }
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+        addItem: (data) => dispatch(addItem(data)),
+
+    }
+  }
+export default connect(mapStateToProps, mapDispatchToProps)(ListOfProducts)
