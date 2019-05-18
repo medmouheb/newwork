@@ -10,7 +10,7 @@ import ShoppingCart from '../../../containers/tunnel/shopping cart/shoppingCart'
 import Shipping from '../../../containers/tunnel/shopping cart/shipping/shipping'
 import Common from '../../../containers/common'
 
-import { Badge,FormControl, Navbar, Form, Button, Nav, NavDropdown, Container, Row, Col, OverlayTrigger } from 'react-bootstrap';
+import {DropdownButton,Dropdown, Badge, FormControl, Navbar, Form, Button, Nav, NavDropdown, Container, Row, Col, OverlayTrigger } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import { Link, Route, BrowserRouter } from "react-router-dom";
 import './navbar.css'
@@ -42,7 +42,7 @@ class NavBar extends Component {
     )
     const WhenConnected = (
       <Form inline style={{ display: !this.props.isConnected ? "" : "none" }}>
-        <Button style={{ marginRight: "30px" }} variant="outline-primary">Sign up</Button>
+        <Button style={{ marginLeft: "60px" }} variant="outline-primary">Sign up</Button>
         <OverlayTrigger trigger="focus" placement="right" overlay={popover}>
           <Button variant="outline-success">Log in</Button>
         </OverlayTrigger>
@@ -50,9 +50,9 @@ class NavBar extends Component {
     )
     const WhenDisconnected = (
       <Form inline style={{ display: this.props.isConnected ? "" : "none" }}>
-        <Button variant="primary"><Link style={{ color: "white" }} to="ShoppingCart"><i class='fab fa-opencart'></i>
+        <Button variant="primary" size="lg"><Link style={{ color: "white" }} to="ShoppingCart"><i class='fab fa-opencart'></i>
         </Link></Button>
-        <Button variant="success"><i class='far fa-address-card'></i>
+        <Button variant="success" size="lg"><i class='far fa-address-card'></i>
         </Button>
       </Form>
     )
@@ -70,7 +70,7 @@ class NavBar extends Component {
 
                 )
               }
-              else if(el.type === "dropdown") {
+              else if (el.type === "dropdown") {
                 return (
                   <NavDropdown title={el.name} id="basic-nav-dropdown">
                     {el.childrens.map(element => {
@@ -79,31 +79,30 @@ class NavBar extends Component {
                   </NavDropdown>
                 )
               }
-              else if(el.type === "secenddropdown"){
-                return(
-                  <NavDropdown title={el.name} id="basic-nav-dropdown">
+              else if (el.type === "secenddropdown") {
+                return (
+                  <DropdownButton drop="down"  variant="secondary" title={el.name}>
                     {el.childrens.map(element => {
-                      if( element.type =="normal")
-                      {return <NavDropdown.Item href={element.adresee}>{element.name}</NavDropdown.Item>}
+                      if (element.type == "normal") { return <Dropdown.Item href={element.adresee} >{element.name}</Dropdown.Item> }
                       else {
-                        return(
-                          <NavDropdown title={element.name} id="basic-nav-dropdown">
-                            {element.grandChildrens.map(element0=>{return (<NavDropdown.Item href={element0.adresee}>{element0.name}</NavDropdown.Item>)})}
-                          
-                          </NavDropdown>
+                       
+                        return (
+                          <DropdownButton drop="right" variant="secondary" title={element.name}> 
+                            {element.grandChildrens.map(element0 => { return (<Dropdown.Item href={element.adresee0} >{element0.name}</Dropdown.Item>) })}
+                            </DropdownButton>
                         )
                       }
                     })}
-                  </NavDropdown>
+                 </DropdownButton>
                 )
               }
-              else if(el.type ==="logo"){
-                return(
-                  <Navbar.Brand  ><Link to="/"> <img alt={el.name} src={el.src} width="20"/></Link></Navbar.Brand>
+              else if (el.type === "logo") {
+                return (
+                  <Navbar.Brand  ><Link to="/"> <img alt={el.name} src={el.src} width="20" /></Link></Navbar.Brand>
                 )
               }
-              else if(el.type ==="icon"){
-                return(<div> <img src={el.src} width="20"/> <h6><Badge variant="secondary">{el.name}</Badge></h6></div>)
+              else if (el.type === "icon") {
+                return (<div> <img src={el.src} width="20" /> <h6><Badge variant="secondary">{el.name}</Badge></h6></div>)
               }
             })}
           </Nav>

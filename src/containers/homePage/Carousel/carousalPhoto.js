@@ -5,10 +5,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 class CarouselPhoto extends Component{
     render(){
         return(
-            <Carousel autoPlay>
+            <Carousel  centerMode showThumbs={false}>
+                
             {this.props.data.map(el=>{
-              return <div>
-              <img src={el.src} />
+              return <div width="700px">
+              <img  src={el.src} />
               <p className="legend">{el.paragraph}</p>
             </div>
             })}

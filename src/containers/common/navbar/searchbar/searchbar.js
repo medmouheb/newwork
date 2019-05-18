@@ -7,9 +7,7 @@ class Searchbar extends Component {
     render() {
       return (
       <div className="search">
-      <Form>
-        <Form.Row>
-          <Col >
+
           <Autocomplete
           suggestions={[
             "Alligator",
@@ -24,9 +22,7 @@ class Searchbar extends Component {
             "Wetlands"
           ]}
         />
-          </Col>
-        </Form.Row>
-      </Form>
+
          
       </div>
       

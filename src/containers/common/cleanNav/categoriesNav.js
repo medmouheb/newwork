@@ -26,7 +26,7 @@ class CategoriesNav extends Component {
                                             <div className="CategoriesColumn" >
                                                 <h3>{el.name}</h3>
                                                 {el.list.map(elem => {
-                                                    return (<a href="#">{elem}</a>)
+                                                    return (<a href={elem.liink}>{elem.name}</a>)
                                                 })}
                                             </div>
                                         )

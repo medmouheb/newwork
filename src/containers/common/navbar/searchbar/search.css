@@ -46,6 +46,7 @@ input {
   position: relative;
   display: flex;
   padding: 2%;
+  width: 22%;
   z-index: 5 ;
 
 }

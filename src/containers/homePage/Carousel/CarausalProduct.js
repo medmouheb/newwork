@@ -4,7 +4,6 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 import {Card} from 'react-bootstrap';
 const display={
   margin: "20px",
-  minWidth: '10rem'
 }
 class CarousalProduct extends Component{
     state = {
@@ -19,9 +18,9 @@ class CarousalProduct extends Component{
                 return(
                     <Card onClick={()=>{this.setState({currentIndex:i})}} style={display}>
                         <div className="discountpercent">{el.discount}</div>
-                        <Card.Img  variant="top" src={el.src} />
+                        <Card.Img  style={{width:"200px"}} variant="top" src={el.src} />
                         <Card.Body>
-                          <Card.Title>{el.name}</Card.Title>
+                          {el.name}
                           <Card.Text>
                               {el.price}
                           </Card.Text>
@@ -57,13 +56,13 @@ class CarousalProduct extends Component{
         const { currentIndex, galleryItems, responsive } = this.state
     
         return (
-          <div>
-              <div >
-                  <Card style={display}>
+          <div >
+              <div style={{display:"flex",justifyContent:"center"}}>
+                  <Card style={{maxWidth:"20%"}}>
                         <div className="discountpercent">{this.props.data[this.state.currentIndex].discount}</div>
-                        <Card.Img  variant="top" src={this.props.data[this.state.currentIndex].src} />
+                        <Card.Img style={{width:"200px"}} variant="top" src={this.props.data[this.state.currentIndex].src} />
                         <Card.Body>
-                        <Card.Title>{this.props.data[this.state.currentIndex].name}</Card.Title>
+                        {this.props.data[this.state.currentIndex].name}
                         <Card.Text>
                             {this.props.data[this.state.currentIndex].price}
                         </Card.Text>
