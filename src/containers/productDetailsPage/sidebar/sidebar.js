@@ -12,10 +12,7 @@ class Sidebar extends Component{
         grandchild:0
     }
     render(){
-        const spanStyle={
-            fontSize:"30px",
-            cursor:"pointer"
-        }
+
         const handleOpen=()=>{
             this.setState({menuWidth:"250px"})
         }
@@ -57,7 +54,7 @@ class Sidebar extends Component{
                 </div>
                     <h2>Animated Sidenav Example</h2>
                     <p>Click on the element below to open the side navigation menu.</p>
-                    <span style={spanStyle} onClick={handleOpen}>&#9776; open</span>
+                    <span className="openSpan"  onClick={handleOpen}>&#9776; open</span>
             </div>
 
             

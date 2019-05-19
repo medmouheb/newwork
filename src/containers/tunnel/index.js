@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, withRouter, Redirect, Link, BrowserRouter } from "react-router-dom";
+import { Route, Link, BrowserRouter } from "react-router-dom";
 import QuestionFormat from './genericForm/genericform'
 import { Container, Row, Col,ProgressBar } from 'react-bootstrap';
 import LoginComponenet from './login'
@@ -52,22 +52,6 @@ class Tunnel extends Component {
                     </div>                    
                     
             </BrowserRouter>
-        )
-        return (
-            <Container>
-
-                <QuestionFormat />
-                <Row>
-                    <Col>
-                        <h3>login</h3>
-                        <LoginComponenet />
-                    </Col>
-                    <Col>
-                        <h3>sign up</h3>
-                        <SignupComponenet />
-                    </Col>
-                </Row>
-            </Container>
         )
     }
 }

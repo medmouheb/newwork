@@ -3,7 +3,7 @@ import SimpleProduct from './grid/SimpleProduct'
 import ListOfProducts from './grid/listProduct'
 import {Container,Row,Col,Form,Pagination,ButtonGroup,Button} from 'react-bootstrap'
 import { connect } from 'react-redux'
-import Filter from '../productListe/filter/filter.js'
+import Filter from '../filter/filter'
 class ProductListViewer extends Component{
     state={
         currentPage:1,

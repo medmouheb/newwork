@@ -94,9 +94,5 @@ const mapStateToProps = (state) => {
         itemsNumber: state.ShoppingCartReducer.itemsNumber,
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
 
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Shipping)
+export default connect(mapStateToProps)(Shipping)

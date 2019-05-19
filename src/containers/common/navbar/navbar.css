@@ -3,3 +3,11 @@
     right:0;
     margin-right:30px
 }
+.navbarPopover{
+    z-index: 6;
+    background-color: gray;
+    border-radius: 25px;
+}
+.signUpButton{
+    margin-left: 60px;
+}

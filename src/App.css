@@ -1,6 +1,4 @@
-h3,p{
-  color:  blueviolet !important;
-}
+
 .productsGrid > img{
   height: 200px !important;
 }
@@ -15,9 +13,7 @@ h3,p{
 #zoom img {
   width: 50% ;
 }
-body{
-  font-family: 'Just Another Hand', cursive;
-}
+
 #cartButton{
   background-image: url("https://image.flaticon.com/icons/svg/138/138256.svg");
     height: 100%; 

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 
-import {Form,Col,Row,Container} from 'react-bootstrap';
+import {Form} from 'react-bootstrap';
 
 const data=[
     {

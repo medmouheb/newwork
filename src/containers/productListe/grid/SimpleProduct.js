@@ -1,5 +1,6 @@
 import React ,{Component} from 'react'
 import {Card} from 'react-bootstrap';
+import './SimpleProduct.css'
 const display={
     margin: "20px",
     width: '13rem'
@@ -7,7 +8,7 @@ const display={
 class SimpleProduct extends Component{
     render(){
         return(
-            <div style={{display:"flex",flexWrap: "wrap"}}>
+            <div className="SimpleProduct" >
                 {this.props.data.map(el=>{
                     return(
                         <Card style={display}>

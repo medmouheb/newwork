@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Modal, Button, Card, Badge } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { removeItem, addSameItem, removeSameItem } from '../../../store/actions/shoppingCart'
-import { Link, Route, BrowserRouter } from "react-router-dom";
-
 import './shoppingCart.css'
 class ShoppingCart extends Component {
     constructor(props, context) {
@@ -43,7 +41,6 @@ class ShoppingCart extends Component {
 
             </Modal>
         )
-
         return (
             <div>
                 <div style={{ display: "flex", position: 'relative' }}>
@@ -64,17 +61,13 @@ class ShoppingCart extends Component {
                                                 </div>
                                                 <div>
                                                     <Button variant="danger" onClick={() => { this.handleShow(i) }} >remove</Button>
-
                                                 </div>
-
                                             </Card.Text>
                                             <Button variant="primary" onClick={() => { this.props.addSameItem(i) }}>+</Button>
                                             <span>{this.props.itemsNumber[i]}</span>
                                             <Button variant="primary" onClick={() => { this.props.itemsNumber[i] == 1 ? this.handleShow(i) : this.props.removeSameItem(i) }}>-</Button>
                                         </Card.Body>
                                     </div>
-
-
                                 </Card>
                             )
                         })}
@@ -82,15 +75,14 @@ class ShoppingCart extends Component {
                     <div className="test" style={{ position: "sticky", top: "0", height: "100%" }}>
                         <div class="cart">
                             <h1>Cart items<i class="	fa fa-shopping-cart"  ><Badge variant="light">{this.props.totalitems}</Badge></i><br /></h1>
-                           <h1>Total price: <strong id="totalPrice"><i class="	fas fa-money-check-alt"  ><Badge variant="light">{this.props.total}</Badge></i></strong></h1> 
-                           <div >
+                            <h1>Total price: <strong id="totalPrice"><i class="	fas fa-money-check-alt"  ><Badge variant="light">{this.props.total}</Badge></i></strong></h1>
+                            <div >
                                 <Button>Clear the cart</Button>
                                 <Button onClick={() => { this.props.changeSate("Shipping") }}> Shipping</Button>
                             </div>
                         </div>
+                    </div>
                 </div>
-                </div>
-                
             </div>
         )
     }
@@ -103,7 +95,6 @@ const mapStateToProps = (state) => {
         totalitems: state.ShoppingCartReducer.totalitems
     }
 }
-
 const mapDispatchToProps = (dispatch) => {
     return {
         removeItem: (index) => dispatch(removeItem(index)),

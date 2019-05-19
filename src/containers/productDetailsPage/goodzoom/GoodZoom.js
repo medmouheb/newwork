@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './GoodZoom.css';
-import { Card,Table } from 'react-bootstrap';
+import { Card, Table } from 'react-bootstrap';
 
 class GoodZoom extends Component {
     constructor(props) {
@@ -54,7 +54,7 @@ class GoodZoom extends Component {
             setTimeout(imageZoom(), 300)
         }
         const handlehide = () => {
-            
+
             this.setState({ hide: true })
             imageZoom()
         }
@@ -65,8 +65,8 @@ class GoodZoom extends Component {
             <div className="img-zoom-container">
                 <div id="img-zoom-container">
                     <div >
-                        <div id="imgToZoom"  onMouseOver={handleShow} onMouseOut={handlehide}>
-                            <div className="img-zoom-lens" ref="lens"/>
+                        <div id="imgToZoom" onMouseOver={handleShow} onMouseOut={handlehide}>
+                            <div className="img-zoom-lens" ref="lens" />
                             <img id="myimage" src={this.props.data[this.state.currentIndex]} width="300" height="240" ref="myimage" />
                             <img id="normalImg" src={this.props.data[this.state.currentIndex]} width="300" height="240" />
                         </div>
@@ -97,34 +97,34 @@ class GoodZoom extends Component {
                     </div>
                 </div>
                 <Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td colSpan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</Table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td colSpan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </Table>
             </div>
         )
     }

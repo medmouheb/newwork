@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { connect } from 'react-redux'
-import {addItem} from '../../../store/actions/shoppingCart'
+import {addItem} from '../../../../store/actions/shoppingCart'
 class ListOfProducts extends Component {
     render() {
         return (
@@ -32,11 +32,7 @@ class ListOfProducts extends Component {
         )
     }
 }
-const mapStateToProps = (state) => {
-    
-"hey"
-    
-  }
+
   
   const mapDispatchToProps = (dispatch) => {
     return {
@@ -44,4 +40,4 @@ const mapStateToProps = (state) => {
 
     }
   }
-export default connect(mapStateToProps, mapDispatchToProps)(ListOfProducts)
+export default connect(null, mapDispatchToProps)(ListOfProducts)
