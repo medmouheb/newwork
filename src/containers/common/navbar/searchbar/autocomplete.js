@@ -158,8 +158,10 @@ class Autocomplete extends Component {
             <Button variant="outline-secondary"><i class='fas fa-search'></i></Button>
           </InputGroup.Append>
         </InputGroup>
-
+        <div>
         {suggestionsListComponent}
+        </div>
+        
       </Fragment>
     );
   }

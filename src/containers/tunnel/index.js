@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Link, BrowserRouter } from "react-router-dom";
 import QuestionFormat from './genericForm/genericform'
-import { Container, Row, Col,ProgressBar } from 'react-bootstrap';
+import { ProgressBar } from 'react-bootstrap';
 import LoginComponenet from './login'
 import SignupComponenet from './signUP'
 import ShoppingCart from './shopping cart/shoppingCart'

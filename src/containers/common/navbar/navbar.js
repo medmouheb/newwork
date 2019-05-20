@@ -39,10 +39,9 @@ class NavBar extends Component {
     )
     const WhenDisconnected = (
       <Form inline style={{ display: this.props.isConnected ? "" : "none" }}>
-        <Button variant="primary" size="lg"><Link style={{ color: "white" }} to="ShoppingCart"><i class='fab fa-opencart'></i>
-        </Link></Button>
-        <Button variant="success" size="lg"><i class='far fa-address-card'></i>
-        </Button>
+        <Link style={{ color: "red",fontSize:"40px",position:"relative" ,margin:"15px" }} to="ShoppingCart"><i class='fas fa-shopping-cart'></i>
+        <Badge  style={{fontSize:"15px",position:"absolute",left:"0"  }} variant="danger">{this.props.totalitems}</Badge></Link>
+        <Link ><i style={{color:"green",fontSize:"40px",margin:"12px" }} class='far fa-address-card'></i></Link>
       </Form>
     )
     return (
@@ -110,6 +109,8 @@ class NavBar extends Component {
 const mapStateToProps = (state) => {
   return {
     isConnected: state.currentUserReducer.isConnected,
+    totalitems: state.ShoppingCartReducer.totalitems,
+
   }
 }
 

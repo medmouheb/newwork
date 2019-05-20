@@ -4,19 +4,23 @@ import {Form} from 'react-bootstrap';
 
 const data=[
     {
-        type:"text",
-        comment:"email",
-        text:"give us your email little nigga"
+        type:"input",
+        inputType:"email",
+        label:"give us your email little nigga",
+        placeholder:"give email"
     },
     {
-        type:"text",
-        comment:"password"
+        type:"select",
+        label:"select number",
+        multiple:true,
+        options:[1,2,3,4],
+        size:3
     },
     {
-        type:"text",
-        comment:"normal",
-        label:"hate isemik"
-    },
+        type:"textarea",
+        label:"this is texterea ",
+        placeholder:"write here ..."
+    }
 ]
 
 class QuestionFormat extends Component{
@@ -27,93 +31,57 @@ class QuestionFormat extends Component{
 
                 <Form>
                     {data.map(element=>{
-                        if(element.type==="text" && element.comment==="email"){
+                       switch (element.type){
+                        case "input":
                             return(
-                                <Form.Group controlId="formBasicEmail">
-                                    <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" />
-                                    <Form.Text className="text-muted">
-                                    {element.text}
-                                    </Form.Text>
-                                </Form.Group>
-                            )
-                        }
-                        else if(element.type==="text" && element.comment==="password"){
-                            return(
-                                <Form.Group controlId="formBasicPassword">
-                                    <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" placeholder="Password" />
-                                </Form.Group>
-                            )
-                        }
-                        else if(element.type==="text" && element.comment==="normal"){
-                            return(
-                                <Form.Group  controlId="formGridCity">
+                                <Form.Group >
                                     <Form.Label>{element.label}</Form.Label>
-                                    <Form.Control />
+                                    <Form.Control
+                                    type={element.inputType}
+                                    name={element.name || ""} 
+                                    size={element.size||""} 
+                                    maxLength={element.maxlength || ""} 
+                                    required={element.required || ""}
+                                    pattern={element.pattern || ""}
+                                    min={element.min || ""}
+                                    max={element.max || ""}
+                                    step={element.step || ""}
+                                    placeholder={element.placeholder || ""}
+                                    />
                                 </Form.Group>
                             )
-                        }
-                        else if(element.type==="text" && element.comment==="textEria"){
-                        return(
-                            <Form.Group controlId="exampleForm.ControlTextarea1">
-                                <Form.Label>{element.label}</Form.Label>
-                                <Form.Control as="textarea" rows="3" />
-                            </Form.Group>
-                        )  
-                        }
-                        else if(element.type==="uni" && element.comment==="select"){
+                        break;
+                        case "select":
                             return(
                                 <Form.Group controlId="exampleForm.ControlSelect1">
                                     <Form.Label>{element.label}</Form.Label>
-                                    <Form.Control as="select">
-                                    {element.options.map(el=>{return <option>{el}</option>})}
+                                    <Form.Control  
+                                    as="select"
+                                    multiple={element.multiple||""}
+                                    name={element.name || ""}
+                                    size={element.size || 5}
+                                    >
+                                    {element.options.map((el,i)=>{return <option selected={i===element.selected}>{el}</option>})}
                                     </Form.Control>
                                 </Form.Group>
                             )
-                        }
-                        else if(element.type==="uni" && element.comment==="checkbox"){
+                        break;
+                        case "textarea":
                             return(
-                                <Form.Group>
-                                    <Form.Label column sm="2">
-                                    {element.label}
-                                    </Form.Label>
-                                    <div key="default-checkbox" className="mb-3">
-                                    {element.options.map(el=>{return(
-                                        <Form.Check 
-                                        type="checkbox"
-                                        label={el}
+                                <Form.Group >
+                                    <Form.Label>{element.label}</Form.Label>
+                                    <Form.Control
+                                    as="textarea"
+                                    name={element.name || ""} 
+                                    size={element.size||""} 
+                                    maxLength={element.maxlength || ""} 
+                                    required={element.required || ""}                                        
+                                    placeholder={element.placeholder || ""}
                                     />
-                                    )})}
-                                    </div>
-                                    
                                 </Form.Group>
                             )
-                        }
-                        else if(element.type==="text" && element.comment==="number"){
-                            return(
-                                <Form.Group  controlId="formGridCity">
-                                    <Form.Label>{element.label}</Form.Label>
-                                    <Form.Control type="number"   />
-                                </Form.Group>
-                            )
-                        }
-                        else if(element.type==="text" && element.comment==="date"){
-                            return(
-                                <Form.Group  controlId="formGridCity">
-                                    <Form.Label>{element.label}</Form.Label>
-                                    <Form.Control type="date" />
-                                </Form.Group>
-                            )
-                        }
-                        else if(element.type==="text" && element.comment==="file"){
-                            return(
-                                <Form.Group  controlId="formGridCity">
-                                    <Form.Label>{element.label}</Form.Label>
-                                    <Form.Control  type="file" />
-                                </Form.Group>
-                            )
-                        }
+                        break;
+                    }
                     })}
                 </Form>
 
