@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import { deleteColum, modifieColum,addColumn } from '../../store/actions/dataTable'
 import { Form, Button, Col, Input, Modal } from 'react-bootstrap';
 import GenericForme from './genericForm/genericform'
+import NavBar from '../common/navbar/navbar'
+import Footer from '../common/footer/footer'
+import CategoriesNav from '../common/cleanNav/categoriesNav'
 class DataTable extends Component {
     state = {
         selectedLigne: null,
@@ -15,7 +18,7 @@ class DataTable extends Component {
         modalTable:[]
     }
     render() {
-        const { data, column } = this.props
+        const { data, column,CategorieTab,menu,footer } = this.props
         const handleSelect = (i) => {
             this.setState({ selectedLigne: i })
         }
@@ -62,6 +65,9 @@ class DataTable extends Component {
         }
         return (
             <div>
+                <NavBar data={menu}/>
+                <CategoriesNav data={CategorieTab}/>
+
                 <Modal  show={this.state.showmodale} onHide={handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Modifie Ligne</Modal.Title>
@@ -118,7 +124,7 @@ class DataTable extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.filter((el) => {return (el[this.state.searchColumn].includes(this.state.searchResult))}).map((el, i) => {
+                        {data.filter((el) => {return (el[this.state.searchColumn].toLowerCase().includes(this.state.searchResult.toLowerCase()))}).map((el, i) => {
                             return (
                                 <tr style={{ backgroundColor: this.state.selectedLigne === i ? "gray" : "" }} onClick={() => { handleSelect(i);actualSelect(el) }}>
                                     {el.map((el0, i) => {
@@ -162,6 +168,7 @@ class DataTable extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer data={footer}/>
             </div>
         )
     }
@@ -169,7 +176,10 @@ class DataTable extends Component {
 const mapStateToProps = (state) => {
     return {
         data: state.DataTableReducer.data,
-        column: state.DataTableReducer.column
+        column: state.DataTableReducer.column,
+        menu: state.menuReducers.menu,
+        footer: state.FooterReducer.footer,
+        CategorieTab:state.MegaMenuReducers.CategorieTab
     }
 }
 const mapDispatchToProps = (dispatch) => {

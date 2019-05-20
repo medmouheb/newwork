@@ -1,9 +1,22 @@
 .CategoriesNav {
     display: flex;
     position: relative;
-    justify-content: space-around;
-    background-color: red;
+    justify-content: space-between;
     z-index: 3
+}
+.btnCategories{
+    background-color: aquamarine;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 140%;
+    width: 100%;
+}
+.btnCategories:hover{
+    background-color: gray;
+
+}
+.CategoriesNavColumn{
+    width: 100%
 }
 
 .CategoriesLists {

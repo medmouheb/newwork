@@ -20,12 +20,12 @@ return(
     <Container>
   <Switch>
       
-      <Route path="/Homepage" exact component={()=><Common wrappedComponent={<Homepage/>}/>}/>
-      <Route path="/DataTable" exact component={()=><Common wrappedComponent={<DataTable/>}/>}/>
-      <Route path="/productListe" exact component={()=><Common wrappedComponent={<ProductListe/>}/>}/>
-      <Route path="/Productdetail" exact component={()=><Common wrappedComponent={<Productdetail/>}/>}/>
-      <Route path="/tunnel" exact component={()=><Common wrappedComponent={<Tunnel/>}/>}/>
-      <Route path="/"   component={()=><Common wrappedComponent={<Homepage/>}/>}/>
+      <Route path="/Homepage" exact component={Homepage}/>
+      <Route path="/DataTable" exact component={DataTable}/>
+      <Route path="/productListe" exact component={ProductListe}/>
+      <Route path="/Productdetail" exact component={Productdetail}/>
+      <Route path="/tunnel" exact component={Tunnel}/>
+      <Route path="/"   component={Homepage}/>
       </Switch>
 
     </Container>

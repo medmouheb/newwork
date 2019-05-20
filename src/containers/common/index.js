@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
+import { connect } from 'react-redux'
 import NavBar from './navbar/navbar'
 import Footer from './footer/footer'
-import { connect } from 'react-redux'
 import CategoriesNav from './cleanNav/categoriesNav'
 class Common extends Component{
     render(){

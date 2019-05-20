@@ -2,15 +2,20 @@ import React,{Component} from 'react'
 import GoodZoom from './goodzoom/GoodZoom'
 import Sidebar from './sidebar/sidebar'
 import { connect } from 'react-redux'
-
+import NavBar from '../common/navbar/navbar'
+import Footer from '../common/footer/footer'
+import CategoriesNav from '../common/cleanNav/categoriesNav'
 class Productdetail extends Component{
     render(){
-        const { sidemenu,ProductImagelist} = this.props
+        const { sidemenu,ProductImagelist,CategorieTab,menu,footer} = this.props
 
         return(
             <div  >
+                <NavBar data={menu}/>
+                <CategoriesNav data={CategorieTab}/>
                 <Sidebar data={sidemenu}/>
                 <GoodZoom data={ProductImagelist}/>
+                <Footer data={footer}/>
             </div>
         )
     }
@@ -19,7 +24,10 @@ class Productdetail extends Component{
 const mapStateToProps = (state) => {
     return {
       sidemenu:state.sidemenuReducer.sidemenu,
-      ProductImagelist:state.ProductImagelistReducer.ProductImagelist
+      ProductImagelist:state.ProductImagelistReducer.ProductImagelist,
+      menu: state.menuReducers.menu,
+        footer: state.FooterReducer.footer,
+        CategorieTab:state.MegaMenuReducers.CategorieTab
     }
   } 
   export default connect(mapStateToProps)(Productdetail);

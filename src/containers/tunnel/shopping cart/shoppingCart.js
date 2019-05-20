@@ -78,7 +78,7 @@ class ShoppingCart extends Component {
                             <h1>Total price: <strong id="totalPrice"><i class="	fas fa-money-check-alt"  ><Badge variant="light">{this.props.total}</Badge></i></strong></h1>
                             <div >
                                 <Button>Clear the cart</Button>
-                                <Button onClick={() => { this.props.changeSate("Shipping") }}> Shipping</Button>
+                                <Button onClick={() => { this.props.changeSate("Identification") }}> Identification</Button>
                             </div>
                         </div>
                     </div>

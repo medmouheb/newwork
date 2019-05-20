@@ -13,7 +13,7 @@ class NavBar extends Component {
 
 
     const popover = (
-      <Form>
+      <Form style={{backgroundColor:"gray", zIndex:"6"}}>
         <Form.Group controlId="formBasicEmail">
           <br />
           <Form.Label>Email address</Form.Label>
@@ -31,9 +31,9 @@ class NavBar extends Component {
     )
     const WhenConnected = (
       <Form inline style={{ display: !this.props.isConnected ? "" : "none" }}>
-        <Button className="signUpButton" variant="outline-primary">Sign up</Button>
+        <Button style={{margin:"20px"}} className="signUpButton" size="sm" variant="outline-primary">Sign up</Button>
         <OverlayTrigger trigger="focus" placement="right" overlay={popover}>
-          <Button variant="outline-success">Log in</Button>
+          <Button size="sm" variant="outline-success">Log in</Button>
         </OverlayTrigger>
       </Form>
     )

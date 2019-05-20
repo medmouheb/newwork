@@ -5,7 +5,7 @@ class Identification extends Component{
         return(
             <div>
                 are you you
-                <Button onClick={()=>{this.props.changeSate("Payment")}}>Payment</Button>
+                <Button onClick={()=>{this.props.changeSate("Shipping")}}>Shipping</Button>
             </div>
         )
     }

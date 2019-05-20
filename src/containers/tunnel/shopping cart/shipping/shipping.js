@@ -83,7 +83,7 @@ class Shipping extends Component {
                     })}
 
                 </div>
-                <Button onClick={() => { this.props.changeSate("Identification") }}>Identification</Button>
+                <Button onClick={() => { this.props.changeSate("Payment") }}>Payment</Button>
             </div>
         )
     }

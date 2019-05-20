@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Button} from 'react-bootstrap'
 import './categoriesNav.css'
 class CategoriesNav extends Component {
     state={
@@ -15,12 +16,12 @@ class CategoriesNav extends Component {
             <div className="CategoriesNav">
                 {this.props.data.map((element,i) => {
                     return (
-                        <div onMouseOver={()=>{handleShow(i)}} onMouseOut={handleHide}>
-                            <button className="dropbtn" onClick={()=>{handleShow(i)}} >
+                        <div className="CategoriesNavColumn" onMouseOver={()=>{handleShow(i)}} onMouseOut={handleHide}>
+                            <div className="btnCategories"   onClick={()=>{handleShow(i)}} >
                             {element.name}
-                            </button>
+                            </div>
                             <div className="CategoriesLists" style={{display:this.state.show===i?"":"none"}}>
-                                    {element.category.map((el, index) => {
+                                    {element.category.map((el) => {
 
                                         return (
                                             <div className="CategoriesColumn" >
