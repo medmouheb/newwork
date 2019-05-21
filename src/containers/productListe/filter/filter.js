@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+// import {init2slider} from './fun'
+
 import './filter.css'
 import { Form, Button, Fade } from 'react-bootstrap';
 import { filterProduct } from '../../../store/actions/product'
@@ -46,12 +48,15 @@ const list = [
 
 class Filter extends Component {
     state = {
-        priceFrom: 30,
+        priceFrom: 0,
         priceTo: 100,
         condition: list.map(el => { return { ...el, variety: [] } }),
         fadeBoolean: list.map(el => { return el.fade })
     }
+
     render() {
+
+
         const handleFilter = (event, ind, el) => {
             if (event.target.checked) {
                 this.state.condition[ind].variety.push(el)
@@ -90,6 +95,10 @@ class Filter extends Component {
                     )
                 })}
 
+                <div className="price-slider"  style={{width:"200px"}}>
+                    <input onChange={(e)=>{this.setState({priceFrom:e.target.value})}} defaultValue={0} min={0} max={100} step="0.5" type="range" oninput="updatePriceLabels()" />
+                    <input onChange={(e)=>{this.setState({priceTo:e.target.value})}} defaultValue={100} min={0} max={100} step="0.5" type="range" oninput="updatePriceLabels()" />
+                </div>
             </div>
         )
 

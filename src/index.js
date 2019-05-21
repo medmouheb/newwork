@@ -24,18 +24,18 @@ import * as serviceWorker from './serviceWorker';
 import 'react-bootstrap';
 
 const rootReducer = combineReducers({
-    /* */menuReducers,
-    /* */productReducer,
-    /* */FooterReducer,
-    /* */discountProductReducer,
-    /* */sidemenuReducer,
-    /* */BigSaleSRCReducer,
-    /* */CarouselPhotoReducer,
-    /* */ProductImagelistReducer,
-    /* */currentUserReducer,
-    /* */MegaMenuReducers,
-    /* */DataTableReducer,
-    /* */ShoppingCartReducer
+    menuReducers,
+    productReducer,
+    FooterReducer,
+    discountProductReducer,
+    sidemenuReducer,
+    BigSaleSRCReducer,
+    CarouselPhotoReducer,
+    ProductImagelistReducer,
+    currentUserReducer,
+    MegaMenuReducers,
+    DataTableReducer,
+    ShoppingCartReducer
 })
 const store = createStore(rootReducer,compose(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

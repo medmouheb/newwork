@@ -96,8 +96,11 @@ class ProductListViewer extends Component{
                     </Col>
                 </Row>
                 <Row>
+                <Col >
                 {window.screen.width >=1000?<Col sm><Filter/></Col>:""}
-                <Col sm={8}>
+                </Col>
+                
+                <Col sm={9}>
                 {window.screen.width <=1000?<Col sm><Filter/></Col>:""}
                     {this.state.display==='grid'?<SimpleProduct  data={currentProducts}/>:<ListOfProducts data={currentProducts}/>}
                 </Col>  
