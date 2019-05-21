@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 
 const data = [
     {
@@ -20,17 +20,48 @@ const data = [
         type: "textarea",
         label: "this is texterea ",
         placeholder: "write here ..."
+    },
+    {
+        type: "checkbox",
+        label: "fruits",
+        list: [
+            {
+                label: "banana"
+            },
+            {
+                label: "baa"
+            },
+            {
+                label: "orange",
+                checked: true
+            },
+            {
+                label: "olive",
+                disabled: true
+            },
+        ]
     }
 ]
 
 class QuestionFormat extends Component {
-
+    state={
+        result:[],
+    }
     render() {
-
+        const handleModalChange=(index,value)=>{
+            let tab=this.state.result
+            tab[index]=value
+            this.setState({result:tab})
+        }
+        const handleModalChangeCheckbox=(index,value)=>{
+            let tab=this.state.result
+            tab[index]=[...this.state.result[index]||[],value]
+            this.setState({result:tab})
+        }
         return (
 
             <Form>
-                {data.map(element => {
+                {data.map((element,index) => {
                     switch (element.type) {
                         case "input":
                             return (
@@ -48,6 +79,7 @@ class QuestionFormat extends Component {
                                         max={element.max || ""}
                                         step={element.step || ""}
                                         placeholder={element.placeholder || ""}
+                                        onChange={(e)=>{handleModalChange(index,e.target.value)}}
                                     />
                                 </Form.Group>
                             )
@@ -60,6 +92,7 @@ class QuestionFormat extends Component {
                                         as="select"
                                         name={element.name || ""}
                                         size={element.size || 5}
+                                        onChange={(e)=>{handleModalChange(index,e.target.options[e.target.selectedIndex].value)}}
                                     >
                                         {element.options.map((el, i) => { return <option selected={i === element.selected}>{el}</option> })}
                                     </Form.Control>
@@ -76,6 +109,8 @@ class QuestionFormat extends Component {
                                         maxLength={element.maxlength || ""}
                                         required={element.required || ""}
                                         placeholder={element.placeholder || ""}
+                                        onChange={(e)=>{handleModalChange(index,e.target.value)}}
+                                        
                                     />
                                 </Form.Group>
                             )
@@ -83,14 +118,17 @@ class QuestionFormat extends Component {
                         case "checkbox":
                             return (
                                 <Form.Group >
-                                    <Form.Label>{element.label}</Form.Label>
+                                    <Form.Label>{element.label}</Form.Label><br />
                                     {element.list.map(el => {
                                         return (
                                             <Form.Check
+                                                onChange={(e)=>{if(e.target.checked){handleModalChangeCheckbox(index,el.label)}}}
                                                 type="checkbox"
                                                 inline
-                                                checked={el.checked || false}
+                                                disabled={el.disabled}
+                                                checked={el.checked||false }
                                                 label={el.label}
+                                                onChange={(e)=>{e.target.checked=false}}
                                             />
                                         )
                                     })}
@@ -98,6 +136,7 @@ class QuestionFormat extends Component {
                             )
                     }
                 })}
+                <Button onClick={()=>{console.log(this.state.result.map((el,i)=>{return({label:data[i].label,el})}))}}></Button>
             </Form>
 
 

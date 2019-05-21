@@ -13,6 +13,7 @@ import BigSaleSRCReducer from './store/reducers/bigsaleReducer'
 import CarouselPhotoReducer from './store/reducers/CarouselPhotoReducer'
 import ProductImagelistReducer from './store/reducers/ProductImage'
 import currentUserReducer from './store/reducers/currentUserReducer'
+import filterReducer from './store/reducers/filterReducer'
 import MegaMenuReducers from './store/reducers/megaMenu'
 import "react-alice-carousel/lib/alice-carousel.css";
 import DataTableReducer from './store/reducers/dataTableReducer'
@@ -35,7 +36,8 @@ const rootReducer = combineReducers({
     currentUserReducer,
     MegaMenuReducers,
     DataTableReducer,
-    ShoppingCartReducer
+    ShoppingCartReducer,
+    filterReducer
 })
 const store = createStore(rootReducer,compose(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
