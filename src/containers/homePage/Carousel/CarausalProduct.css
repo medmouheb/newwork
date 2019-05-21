@@ -1,0 +1,7 @@
+.discountpercent img{
+    width:200px
+}
+.productCards{
+    display:flex;
+    justify-content:center;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import {Card} from 'react-bootstrap';
+import './CarausalProduct.css'
 const display={
   margin: "20px",
 }
@@ -18,7 +19,7 @@ class CarousalProduct extends Component{
                 return(
                     <Card onClick={()=>{this.setState({currentIndex:i})}} style={display}>
                         <div className="discountpercent">{el.discount}</div>
-                        <Card.Img  style={{width:"200px"}} variant="top" src={el.src} />
+                        <Card.Img variant="top" src={el.src} />
                         <Card.Body>
                           {el.name}
                           <Card.Text>
@@ -57,10 +58,10 @@ class CarousalProduct extends Component{
     
         return (
           <div >
-              <div style={{display:"flex",justifyContent:"center"}}>
+              <div className="productCards" >
                   <Card style={{maxWidth:"20%"}}>
                         <div className="discountpercent">{this.props.data[this.state.currentIndex].discount}</div>
-                        <Card.Img style={{width:"200px"}} variant="top" src={this.props.data[this.state.currentIndex].src} />
+                        <Card.Img  variant="top" src={this.props.data[this.state.currentIndex].src} />
                         <Card.Body>
                         {this.props.data[this.state.currentIndex].name}
                         <Card.Text>

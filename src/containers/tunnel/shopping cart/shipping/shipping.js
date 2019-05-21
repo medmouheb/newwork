@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import './shipping.css'
 import { Card, Button, Form } from 'react-bootstrap'
 class Shipping extends Component {
     state = {
@@ -41,10 +41,10 @@ class Shipping extends Component {
                 <div id="Shipping_by_product" style={{ display: this.state.showByProduct ? "" : "none" }}>
                     {this.props.items.map((el, i) => {
                         return (
-                            <div style={{ display: "flex" }}>
+                            <div className="shippingCards" >
 
                                 <Card>
-                                    <div style={{ display: "flex", alignItems: "baseline" }}>
+                                    <div className="shippingCard" >
                                         <div>
                                             <img width="200" src={el.src} />
                                         </div>

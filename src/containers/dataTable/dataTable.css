@@ -1,0 +1,9 @@
+#modaleBody{
+    overflow: scroll
+}
+th{
+    text-align: center;
+}
+#addRowButton{
+    margin-right: 16px
+}

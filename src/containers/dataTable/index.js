@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { deleteColum, modifieColum,addColumn } from '../../store/actions/dataTable'
-import { Form, Button, Col, Input, Modal } from 'react-bootstrap';
+import { Form,  Modal } from 'react-bootstrap';
 import GenericForme from './genericForm/genericform'
 import NavBar from '../common/navbar/navbar'
 import Footer from '../common/footer/footer'
 import CategoriesNav from '../common/cleanNav/categoriesNav'
+import './dataTable.css'
 class DataTable extends Component {
     state = {
         selectedLigne: null,
@@ -72,7 +73,7 @@ class DataTable extends Component {
                     <Modal.Header closeButton>
                         <Modal.Title>Modifie Ligne</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body style={{overflowY:"scroll"}}>
+                    <Modal.Body id="modaleBody" >
                     <GenericForme data={data[this.state.modifieLigne]} config={column} modifiefunction={handleModifie} />
 
                     </Modal.Body>
@@ -82,7 +83,7 @@ class DataTable extends Component {
                     <Modal.Header closeButton>
                         <Modal.Title>Modifie Ligne</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body style={{overflowY:"scroll"}}>
+                    <Modal.Body  id="modaleBody" >
                     <GenericForme data={[]} config={column} modifiefunction={handleAdd} />
 
                     </Modal.Body>
@@ -119,7 +120,7 @@ class DataTable extends Component {
                             {column.map((el) => {
                                 return (<th>{el.label}</th>)
                             })}
-                            <th style={{ textAlign: 'center' }}>Add row <button onClick={handleShowAdd} className="btn btn-success btn-xs dt-add" type="button" data-func="dt-add">+
+                            <th >Add row <button onClick={handleShowAdd} className="btn btn-success btn-xs dt-add" type="button" data-func="dt-add">+
                             </button></th>
                         </tr>
                     </thead>
@@ -132,7 +133,7 @@ class DataTable extends Component {
                                     })}
                                     <td>
                                         <span>
-                                            <button onClick={handleShow} className="btn btn-primary btn-xs dt-edit" style={{ marginRight: '16px' }} type="button">
+                                            <button id="addRowButton" onClick={handleShow} className="btn btn-primary btn-xs dt-edit"  type="button">
                                                 <span>&#9998;</span>
                                             </button>
                                         </span>

@@ -13,6 +13,7 @@ import { connect } from 'react-redux'
 import NavBar from '../common/navbar/navbar'
 import Footer from '../common/footer/footer'
 import CategoriesNav from '../common/cleanNav/categoriesNav'
+import './tunnel.css'
 class Tunnel extends Component {
     state={
         show:"ShoppingCart"
@@ -32,11 +33,11 @@ class Tunnel extends Component {
                     <Link to="/tunnel/LoginComponenet"> <button>  LoginComponenet</button></Link>
                     <Link to="/tunnel/SignupComponenet"> <button>  SignupComponenet</button></Link>
                     <ProgressBar>
-                        <ProgressBar label="ShoppingCart" style={{border:"1px solid black"}} striped variant={this.state.show==="ShoppingCart"?"danger":"secondary"} now={20} key={1} />
-                        <ProgressBar label="Identification" style={{border:"1px solid black"}} striped variant={this.state.show==="Identification"?"danger":"secondary"} now={20} key={3} />
-                        <ProgressBar label="Shipping" style={{border:"1px solid black"}} striped variant={this.state.show==="Shipping"?"danger":"secondary"} now={20} key={2} />
-                        <ProgressBar label="Payment" style={{border:"1px solid black"}} striped variant={this.state.show==="Payment"?"danger":"secondary"} now={20} key={4} />
-                        <ProgressBar label="Conformation" style={{border:"1px solid black"}} striped variant={this.state.show==="Conformation"?"danger":"secondary"} now={20} key={5} />
+                        <ProgressBar id="ProgressBar" label="ShoppingCart"  striped variant={this.state.show==="ShoppingCart"?"danger":"secondary"} now={20} key={1} />
+                        <ProgressBar id="ProgressBar" label="Identification"  striped variant={this.state.show==="Identification"?"danger":"secondary"} now={20} key={3} />
+                        <ProgressBar id="ProgressBar" label="Shipping"  striped variant={this.state.show==="Shipping"?"danger":"secondary"} now={20} key={2} />
+                        <ProgressBar id="ProgressBar" label="Payment"  striped variant={this.state.show==="Payment"?"danger":"secondary"} now={20} key={4} />
+                        <ProgressBar id="ProgressBar" label="Conformation"  striped variant={this.state.show==="Conformation"?"danger":"secondary"} now={20} key={5} />
 
                     </ProgressBar>
 

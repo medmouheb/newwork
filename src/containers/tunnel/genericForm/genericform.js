@@ -82,11 +82,19 @@ class QuestionFormat extends Component {
                             break;
                         case "checkbox":
                             return (
-                                <Form.Check
-                                    type="checkbox"
-                                    checked={element.checked|| false}
-                                    label={element.label}
-                                />
+                                <Form.Group >
+                                    <Form.Label>{element.label}</Form.Label>
+                                    {element.list.map(el => {
+                                        return (
+                                            <Form.Check
+                                                type="checkbox"
+                                                inline
+                                                checked={el.checked || false}
+                                                label={el.label}
+                                            />
+                                        )
+                                    })}
+                                </Form.Group>
                             )
                     }
                 })}
