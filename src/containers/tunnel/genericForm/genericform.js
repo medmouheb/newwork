@@ -126,9 +126,8 @@ class QuestionFormat extends Component {
                                                 type="checkbox"
                                                 inline
                                                 disabled={el.disabled}
-                                                checked={el.checked||false }
+                                                checked={el.checked }
                                                 label={el.label}
-                                                onChange={(e)=>{e.target.checked=false}}
                                             />
                                         )
                                     })}

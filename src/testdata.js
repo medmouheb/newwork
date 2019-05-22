@@ -473,14 +473,54 @@ const sidemenu=[
 ];
 const ZoomIMG={src : 'https://images.unsplash.com/photo-1444065381814-865dc9da92c0'}
 const BigSaleSRC=[
-  {
+  [
+    {
       src:"https://static.jumia.com.tn/cms/campaign-TN/2019/MW19/Sliders/DB/TN_DB_MW_TreasureHunt.jpg",
       link:"www.google.com"
-  },
-  {
-      src:"https://static.jumia.com.tn/cms/campaign-TN/2019/MW19/Sliders/DB/TN_DB_MW_FS_07042019.jpg",
+    },
+    {
+        src:"https://static.jumia.com.tn/cms/campaign-TN/2019/MW19/Sliders/DB/TN_DB_MW_FS_07042019.jpg",
+        link:"www.google.com"
+    }
+  ],
+  [
+    {
+      src:"https://static.jumia.com.tn/cms/campaign-TN/2019/MW19/Sliders/DB/TN_DB_MW_TreasureHunt.jpg",
       link:"www.google.com"
-  },
+    }
+  ],
+  [
+    {
+      src:"https://static.jumia.com.tn/cms/campaign-TN/2019/MW19/Sliders/DB/TN_DB_MW_TreasureHunt.jpg",
+      link:"www.google.com"
+    },
+    {
+      src:"https://static.jumia.com.tn/cms/campaign-TN/2019/MW19/Sliders/DB/TN_DB_MW_TreasureHunt.jpg",
+      link:"www.google.com"
+    },
+    {
+      src:"https://static.jumia.com.tn/cms/campaign-TN/2019/MW19/Sliders/DB/TN_DB_MW_TreasureHunt.jpg",
+      link:"www.google.com"
+    },
+    {
+      src:"https://static.jumia.com.tn/cms/campaign-TN/2019/MW19/Sliders/DB/TN_DB_MW_TreasureHunt.jpg",
+      link:"www.google.com"
+    }
+  ],
+  [
+    {
+      src:"https://static.jumia.com.tn/cms/campaign-TN/2019/MW19/Sliders/DB/TN_DB_MW_TreasureHunt.jpg",
+      link:"www.google.com"
+    },
+    {
+      src:"https://static.jumia.com.tn/cms/campaign-TN/2019/MW19/Sliders/DB/TN_DB_MW_TreasureHunt.jpg",
+      link:"www.google.com"
+    },
+    {
+      src:"https://static.jumia.com.tn/cms/campaign-TN/2019/MW19/Sliders/DB/TN_DB_MW_TreasureHunt.jpg",
+      link:"www.google.com"
+    }
+  ]
 ]
 const CarouselPhoto=[
 { name:"liste",

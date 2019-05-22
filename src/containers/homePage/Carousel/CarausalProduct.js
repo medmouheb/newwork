@@ -58,22 +58,7 @@ class CarousalProduct extends Component{
     
         return (
           <div >
-              <div className="productCards" >
-                  <Card style={{maxWidth:"20%"}}>
-                        <div className="discountpercent">{this.props.data[this.state.currentIndex].discount}</div>
-                        <Card.Img  variant="top" src={this.props.data[this.state.currentIndex].src} />
-                        <Card.Body>
-                        {this.props.data[this.state.currentIndex].name}
-                        <Card.Text>
-                            {this.props.data[this.state.currentIndex].price}
-                        </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                        <small className="text-muted">{this.props.data[this.state.currentIndex].odldPrice}</small>
-                        </Card.Footer>
-                    </Card>
-
-              </div>
+              
             <AliceCarousel
               items={galleryItems}
               slideToIndex={currentIndex}
@@ -82,8 +67,6 @@ class CarousalProduct extends Component{
               onSlideChanged={this.handleOnSlideChange}
               onResized={this.handleOnSlideChange}
             />
-            <button onClick={this.slidePrevPage}>Prev Page</button>
-            <button onClick={this.slideNextPage}>Next Page</button>
           </div>
         )
       }
