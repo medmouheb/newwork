@@ -7,19 +7,22 @@ const data = [
         type: "input",
         inputType: "email",
         label: "give us your email little nigga",
-        placeholder: "give email"
+        placeholder: "give email",
+        value:""
     },
     {
         type: "select",
         label: "select number",
         multiple: true,
         options: [1, 2, 3, 4],
-        size: 3
+        size: 3,
+        value:""
     },
     {
         type: "textarea",
         label: "this is texterea ",
-        placeholder: "write here ..."
+        placeholder: "write here ...",
+        value:""
     },
     {
         type: "checkbox",
@@ -39,29 +42,36 @@ const data = [
                 label: "olive",
                 disabled: true
             },
-        ]
+        ],
     }
 ]
 
 class QuestionFormat extends Component {
     state={
-        result:[],
+        table:data,
     }
     render() {
         const handleModalChange=(index,value)=>{
-            let tab=this.state.result
-            tab[index]=value
-            this.setState({result:tab})
+
+            let tab=this.state.table
+            tab[index].value=value
+            this.setState({table:tab})
         }
-        const handleModalChangeCheckbox=(index,value)=>{
-            let tab=this.state.result
-            tab[index]=[...this.state.result[index]||[],value]
-            this.setState({result:tab})
+        const handlesubmit=()=>{
+            let result=this.state.table.map(el=>{
+                if(el.type==="checkbox"){
+                    return{name:el.label,value:[...el.list.filter(elemen=>{return(elemen.checked)})].map(elemen=>{return(elemen.label)})}
+                }
+                else{
+                    return{name:el.label,value:el.value}
+                }
+            })
+            console.log(result)
         }
         return (
 
             <Form>
-                {data.map((element,index) => {
+                {this.state.table.map((element,index) => {
                     switch (element.type) {
                         case "input":
                             return (
@@ -94,6 +104,7 @@ class QuestionFormat extends Component {
                                         size={element.size || 5}
                                         onChange={(e)=>{handleModalChange(index,e.target.options[e.target.selectedIndex].value)}}
                                     >
+                                         <option >chose from list</option>
                                         {element.options.map((el, i) => { return <option selected={i === element.selected}>{el}</option> })}
                                     </Form.Control>
                                 </Form.Group>
@@ -119,15 +130,15 @@ class QuestionFormat extends Component {
                             return (
                                 <Form.Group >
                                     <Form.Label>{element.label}</Form.Label><br />
-                                    {element.list.map(el => {
+                                    {element.list.map((el,i) => {
                                         return (
                                             <Form.Check
-                                                onChange={(e)=>{if(e.target.checked){handleModalChangeCheckbox(index,el.label)}}}
                                                 type="checkbox"
                                                 inline
                                                 disabled={el.disabled}
                                                 checked={el.checked }
                                                 label={el.label}
+                                                onClick={()=>{let ted= this.state.table;ted[index].list[i].checked=!el.checked;this.setState({table:ted})}}
                                             />
                                         )
                                     })}
@@ -135,7 +146,7 @@ class QuestionFormat extends Component {
                             )
                     }
                 })}
-                <Button onClick={()=>{console.log(this.state.result.map((el,i)=>{return({label:data[i].label,el})}))}}></Button>
+                <Button onClick={handlesubmit}> submit</Button>
             </Form>
 
 

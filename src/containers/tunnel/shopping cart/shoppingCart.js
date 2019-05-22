@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Modal, Button, Card, Badge } from 'react-bootstrap'
 import { connect } from 'react-redux'
+import { Link} from "react-router-dom";
+
 import { removeItem, addSameItem, removeSameItem } from '../../../store/actions/shoppingCart'
 import './shoppingCart.css'
 class ShoppingCart extends Component {
@@ -78,7 +80,7 @@ class ShoppingCart extends Component {
                             <h1>Total price: <strong id="totalPrice"><i class="	fas fa-money-check-alt"  ><Badge variant="light">{this.props.total}</Badge></i></strong></h1>
                             <div >
                                 <Button>Clear the cart</Button>
-                                <Button onClick={() => { this.props.changeSate("Identification") }}> Identification</Button>
+                                <Link to="/tunnel/Identification"> <Button onClick={() => { this.props.changeSate("Identification") }}>  Identification</Button></Link>
                             </div>
                         </div>
                     </div>

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './shipping.css'
 import { Card, Button, Form } from 'react-bootstrap'
+import { Link} from "react-router-dom";
+
 class Shipping extends Component {
     state = {
         showGlobal: true,
@@ -83,7 +85,7 @@ class Shipping extends Component {
                     })}
 
                 </div>
-                <Button onClick={() => { this.props.changeSate("Payment") }}>Payment</Button>
+                <Link to="/tunnel/Payment"> <Button onClick={() => { this.props.changeSate("Payment") }}>  Payment</Button></Link>
             </div>
         )
     }

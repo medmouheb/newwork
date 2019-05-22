@@ -1,11 +1,14 @@
 import React,{Component} from 'react'
 import {Button} from 'react-bootstrap'
+import { Link} from "react-router-dom";
+
 class Identification extends Component{
     render(){
         return(
             <div>
                 are you you
-                <Button onClick={()=>{this.props.changeSate("Shipping")}}>Shipping</Button>
+                <Link to="/tunnel/Shipping"> <Button onClick={()=>{this.props.changeSate("Shipping")}}>  Shipping</Button></Link>
+
             </div>
         )
     }

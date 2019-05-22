@@ -12,23 +12,20 @@ import Conformation from './conformation/conformation'
 import { connect } from 'react-redux'
 import NavBar from '../common/navbar/navbar'
 import Footer from '../common/footer/footer'
-import CategoriesNav from '../common/cleanNav/categoriesNav'
 import './tunnel.css'
 class Tunnel extends Component {
     state={
         show:"ShoppingCart"
     }
     render() {
-        const {CategorieTab,menu,footer} = this.props
+        const {menu,footer} = this.props
         const changeSate=(newshow)=>{
             this.setState({show:newshow})
         }
         return (
             <div>
             <NavBar data={menu}/>
-            <CategoriesNav data={CategorieTab}/>
             <BrowserRouter>
-                
                     <Link to="/tunnel/QuestionFormat"> <button>  QuestionFormat</button></Link>
                     <Link to="/tunnel/LoginComponenet"> <button>  LoginComponenet</button></Link>
                     <Link to="/tunnel/SignupComponenet"> <button>  SignupComponenet</button></Link>
@@ -38,27 +35,19 @@ class Tunnel extends Component {
                         <ProgressBar id="ProgressBar" label="Shipping"  striped variant={this.state.show==="Shipping"?"danger":"secondary"} now={20} key={2} />
                         <ProgressBar id="ProgressBar" label="Payment"  striped variant={this.state.show==="Payment"?"danger":"secondary"} now={20} key={4} />
                         <ProgressBar id="ProgressBar" label="Conformation"  striped variant={this.state.show==="Conformation"?"danger":"secondary"} now={20} key={5} />
-
                     </ProgressBar>
 
                     <Route path="/tunnel/QuestionFormat"  component={QuestionFormat}  />
                     <Route path="/tunnel/LoginComponenet"  component={LoginComponenet}  />
                     <Route path="/tunnel/SignupComponenet"  component={SignupComponenet}  />
-                    <div style={{display:this.state.show==="ShoppingCart"?"":"none"}}>
-                    <ShoppingCart  changeSate={changeSate} />
-                    </div>
-                    <div style={{display:this.state.show==="Identification"?"":"none"}}>
-                    <Identification  changeSate={changeSate}/>
-                    </div>
-                    <div style={{display:this.state.show==="Shipping"?"":"none"}}>
-                    <Shipping changeSate={changeSate}  />
-                    </div>
-                    <div style={{display:this.state.show==="Payment"?"":"none"}}>
-                    <Payment  changeSate={changeSate}/>
-                    </div>
-                    <div style={{display:this.state.show==="Conformation"?"":"none"}}>
-                    <Conformation  /> 
-                    </div>                    
+
+                    <Route path="/tunnel/ShoppingCart"  component={()=><ShoppingCart  changeSate={changeSate} />}  />
+                    <Route path="/tunnel/Identification"  component={()=><Identification  changeSate={changeSate}/>} />
+                    <Route path="/tunnel/Shipping" component={()=><Shipping changeSate={changeSate}  />}  />
+                    <Route path="/tunnel/Payment"  component={()=><Payment  changeSate={changeSate}/>}  />
+                    <Route path="/tunnel/Conformation"  component={()=><Conformation  /> }/>
+                    <Route exact path="/tunnel/" component={()=><ShoppingCart  changeSate={changeSate} />}  />
+                  
                     
             </BrowserRouter>
             <Footer data={footer}/>
@@ -70,7 +59,6 @@ const mapStateToProps = (state) => {
     return {
         menu: state.menuReducers.menu,
         footer: state.FooterReducer.footer,
-        CategorieTab:state.MegaMenuReducers.CategorieTab
     }
   }
 export default connect(mapStateToProps)(Tunnel)
