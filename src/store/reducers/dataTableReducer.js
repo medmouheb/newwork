@@ -1,41 +1,42 @@
-import { testTableData,testTableDataColumn } from '../../testdata.js'
+import {testTableData, testTableDataColumn} from '../../testdata.js'
+
 const initState = {
     data: [...testTableData],
-    column:[...testTableDataColumn]
+    column: [...testTableDataColumn]
 }
 const DataTableReducer = (state = initState, action) => {
 
-    switch(action.type){
+    switch (action.type) {
         case 'MODIFIE_COLUM':
-        let newData=action.newData
-        let tab=state.data
-        tab[action.index]=newData
-          return {  
-            ...state,
-              data:[...tab]
+            let newData = action.newData
+            let tab = state.data
+            tab[action.index] = newData
+            return {
+                ...state,
+                data: [...tab]
             }
-        break;
+            break;
         case 'DELETE_COLUM':
-        let index=action.index
-        let table=state.data
-        table.splice(index,1)
-          return { 
-            ...state, 
-              data:[...table]
+            let index = action.index
+            let table = state.data
+            table.splice(index, 1)
+            return {
+                ...state,
+                data: [...table]
             }
-        break;
+            break;
         case 'ADD_COLUMN':
-        let tabl=state.data
-        tabl.push(action.newdata)
-          return { 
-            ...state, 
-              data:[...tabl]
+            let tabl = state.data
+            tabl.push(action.newdata)
+            return {
+                ...state,
+                data: [...tabl]
             }
-        break;
+            break;
         default:
-        return {
-          ...state,  
-        }
-      }
+            return {
+                ...state,
+            }
+    }
 }
 export default DataTableReducer
