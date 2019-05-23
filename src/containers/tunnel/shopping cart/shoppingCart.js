@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Modal, Button, Card, Badge } from 'react-bootstrap'
 import { connect } from 'react-redux'
+import { Link} from "react-router-dom";
+
 import { removeItem, addSameItem, removeSameItem } from '../../../store/actions/shoppingCart'
 import './shoppingCart.css'
 class ShoppingCart extends Component {
@@ -43,13 +45,13 @@ class ShoppingCart extends Component {
         )
         return (
             <div>
-                <div style={{ display: "flex", position: 'relative' }}>
+                <div className="shoppingCarts">
                     {removeModale}
                     <div >
                         {this.props.items.map((el, i) => {
                             return (
                                 <Card>
-                                    <div style={{ display: "flex", alignItems: "baseline" }}>
+                                    <div className="shippingCard" >
                                         <div>
                                             <img width="200" src={el.src} />
                                         </div>
@@ -72,13 +74,13 @@ class ShoppingCart extends Component {
                             )
                         })}
                     </div>
-                    <div className="test" style={{ position: "sticky", top: "0", height: "100%" }}>
+                    <div className="shoppingIcons" >
                         <div class="cart">
                             <h1>Cart items<i class="	fa fa-shopping-cart"  ><Badge variant="light">{this.props.totalitems}</Badge></i><br /></h1>
                             <h1>Total price: <strong id="totalPrice"><i class="	fas fa-money-check-alt"  ><Badge variant="light">{this.props.total}</Badge></i></strong></h1>
                             <div >
                                 <Button>Clear the cart</Button>
-                                <Button onClick={() => { this.props.changeSate("Identification") }}> Identification</Button>
+                                <Link to="/tunnel/Identification"> <Button onClick={() => { this.props.changeSate("Identification") }}>  Identification</Button></Link>
                             </div>
                         </div>
                     </div>

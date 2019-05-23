@@ -13,7 +13,7 @@ class NavBar extends Component {
 
 
     const popover = (
-      <Form style={{backgroundColor:"gray", zIndex:"6"}}>
+      <Form className="navbarPopover">
         <Form.Group controlId="formBasicEmail">
           <br />
           <Form.Label>Email address</Form.Label>
@@ -31,7 +31,7 @@ class NavBar extends Component {
     )
     const WhenConnected = (
       <Form inline style={{ display: !this.props.isConnected ? "" : "none" }}>
-        <Button style={{margin:"20px"}} className="signUpButton" size="sm" variant="outline-primary">Sign up</Button>
+        <Button className="signUpButton" size="sm" variant="outline-primary">Sign up</Button>
         <OverlayTrigger trigger="focus" placement="right" overlay={popover}>
           <Button size="sm" variant="outline-success">Log in</Button>
         </OverlayTrigger>
@@ -39,9 +39,9 @@ class NavBar extends Component {
     )
     const WhenDisconnected = (
       <Form inline style={{ display: this.props.isConnected ? "" : "none" }}>
-        <Link style={{ color: "red",fontSize:"40px",position:"relative" ,margin:"15px" }} to="ShoppingCart"><i class='fas fa-shopping-cart'></i>
-        <Badge  style={{fontSize:"15px",position:"absolute",left:"0"  }} variant="danger">{this.props.totalitems}</Badge></Link>
-        <Link ><i style={{color:"green",fontSize:"40px",margin:"12px" }} class='far fa-address-card'></i></Link>
+        <Link className="ShoppingCartIcon" to="ShoppingCart"><i class='fas fa-shopping-cart'></i>
+        <Badge className="ShoppingCarBadge"  variant="danger">{this.props.totalitems}</Badge></Link>
+        <Link className="identificationIcon"><i  class='far fa-address-card'></i></Link>
       </Form>
     )
     return (
@@ -66,23 +66,23 @@ class NavBar extends Component {
                   </NavDropdown>
                 )
               }
-              else if (el.type === "secenddropdown") {
-                return (
-                  <DropdownButton drop="down"  variant="secondary" title={el.name}>
-                    {el.childrens.map(element => {
-                      if (element.type == "normal") { return <Dropdown.Item href={element.adresee} >{element.name}</Dropdown.Item> }
-                      else {
+              // else if (el.type === "secenddropdown") {
+              //   return (
+              //     <DropdownButton drop="down"  variant="secondary" title={el.name}>
+              //       {el.childrens.map(element => {
+              //         if (element.type == "normal") { return <Dropdown.Item href={element.adresee} >{element.name}</Dropdown.Item> }
+              //         else {
                        
-                        return (
-                          <DropdownButton drop="right" variant="secondary" title={element.name}> 
-                            {element.grandChildrens.map(element0 => { return (<Dropdown.Item href={element.adresee0} >{element0.name}</Dropdown.Item>) })}
-                            </DropdownButton>
-                        )
-                      }
-                    })}
-                 </DropdownButton>
-                )
-              }
+              //           return (
+              //             <DropdownButton drop="right" variant="secondary" title={element.name}> 
+              //               {element.grandChildrens.map(element0 => { return (<Dropdown.Item href={element.adresee0} >{element0.name}</Dropdown.Item>) })}
+              //               </DropdownButton>
+              //           )
+              //         }
+              //       })}
+              //    </DropdownButton>
+              //   )
+              // }
               else if (el.type === "logo") {
                 return (
                   <Navbar.Brand  ><Link to="/"> <img alt={el.name} src={el.src} width="20" /></Link></Navbar.Brand>

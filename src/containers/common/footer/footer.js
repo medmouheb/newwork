@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
+import "./footer.css"
 class Footer extends Component {
     render() {
       return (
         <footer  class="page-footer font-small unique-color-dark">
 
-        <div style={{backgroundColor: "#6351ce"}}>
+        <div className="footerHeader" >
           <div class="container">
     
             <div class="row py-4 d-flex align-items-center">
@@ -43,7 +43,7 @@ class Footer extends Component {
                         return(
                             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                                 <h6 class="text-uppercase font-weight-bold">{el.name}</h6>
-                                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: "60px"}}/>
+                                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto footerHr" />
                                 <p>{el.content}</p>
                             </div>
                         )
@@ -52,7 +52,7 @@ class Footer extends Component {
                         return(
                             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                                 <h6 class="text-uppercase font-weight-bold">{el.name}</h6>
-                                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: "60px"}}/>
+                                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto footerHr"/>
                                 {el.list.map(element=>{
                                     return(
                                         <p>
@@ -67,7 +67,7 @@ class Footer extends Component {
                         return(
                             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                                 <h6 class="text-uppercase font-weight-bold">{el.name}</h6>
-                                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: "60px"}}/>
+                                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto footerHr"/>
                                 {el.list.map(element=>{
                                     return(
                                         <p><i class={element.iconClass}></i>{element.name}</p>

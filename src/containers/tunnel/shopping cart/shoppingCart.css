@@ -4,3 +4,12 @@
     padding:20px;  
     
   }
+.shoppingCarts{
+  display: flex;
+   position: relative;
+}
+.shoppingIcons{
+  position: sticky;
+   top: 0;
+   height: 100% 
+}

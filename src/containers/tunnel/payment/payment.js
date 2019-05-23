@@ -1,12 +1,14 @@
 import React,{Component} from 'react'
 import {Button} from 'react-bootstrap'
+import { Link} from "react-router-dom";
 
 class Payment extends Component{
     render(){
         return(
             <div>
                 moneeeeeeeeeeeeeeeeeeeey
-                <Button onClick={()=>{this.props.changeSate("Conformation")}}>Conformation</Button>
+                <Link to="/tunnel/Conformation"> <Button onClick={()=>{this.props.changeSate("Conformation")}}>  Conformation</Button></Link>
+
             </div>
         )
     }

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import './shipping.css'
 import { Card, Button, Form } from 'react-bootstrap'
+import { Link} from "react-router-dom";
+
 class Shipping extends Component {
     state = {
         showGlobal: true,
@@ -41,10 +43,10 @@ class Shipping extends Component {
                 <div id="Shipping_by_product" style={{ display: this.state.showByProduct ? "" : "none" }}>
                     {this.props.items.map((el, i) => {
                         return (
-                            <div style={{ display: "flex" }}>
+                            <div className="shippingCards" >
 
                                 <Card>
-                                    <div style={{ display: "flex", alignItems: "baseline" }}>
+                                    <div className="shippingCard" >
                                         <div>
                                             <img width="200" src={el.src} />
                                         </div>
@@ -83,7 +85,7 @@ class Shipping extends Component {
                     })}
 
                 </div>
-                <Button onClick={() => { this.props.changeSate("Payment") }}>Payment</Button>
+                <Link to="/tunnel/Payment"> <Button onClick={() => { this.props.changeSate("Payment") }}>  Payment</Button></Link>
             </div>
         )
     }

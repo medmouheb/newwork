@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import {addItem} from '../../../../store/actions/shoppingCart'
+import './listProduct.css'
 class ListOfProducts extends Component {
     render() {
         return (
@@ -9,9 +10,9 @@ class ListOfProducts extends Component {
                 {this.props.data.map(el => {
                     return (
                         <Card>
-                            <div style={{ display: "flex", alignItems: "baseline" }}>
+                            <div className="cardBody" >
                                 <div>
-                                    <img width="200" src={el.src} />
+                                    <img  src={el.src} />
                                 </div>
                                 <Card.Body>
                                     <Card.Title>{el.name}</Card.Title>
