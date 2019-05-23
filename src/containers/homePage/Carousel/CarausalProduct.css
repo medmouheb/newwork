@@ -5,3 +5,10 @@
     display:flex;
     justify-content:center;
 }
+.CarousalProduct{
+    display: flex;
+
+}
+.CarousalProductButton > img{
+    margin-top: 200%;
+}

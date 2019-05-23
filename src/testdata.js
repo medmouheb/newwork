@@ -42,36 +42,7 @@ let menu = [
       }
     ]
   },
-  {
-    name: 'open',
-    type: 'secenddropdown',
-    childrens: [
-      {
-        name: "link1",
-        type:"dropdown",
-        grandChildrens: [
-          {
-            name: "linfffffk2",
-            adresee: "#link2"
-          },
-          {
-            name: "linffffffk3",
-            adresee: "#link3"
-          }
-        ]
-      },
-      {
-        name: "link2",
-        type:"normal",
-        adresee: "#link2"
-      },
-      {
-        name: "link3",
-        type:"normal",
-        adresee: "#link3"
-      }
-    ]
-  },
+  
   {
     name:"web logo",
     type:"logo",
@@ -864,28 +835,28 @@ const testTableData=[
 ]
 let testTableDataColumn=[
 {
-  type:"text",
-  comment:"normal",
+  type:"input",
+  inputType:"normal",
   label:"Order"
 },
 {
-type:"text",
-comment:"normal",
+type:"input",
+inputType:"normal",
 label:"Description"
 },
 {
-type:"text",
-comment:"normal",
+type:"input",
+inputType:"normal",
 label:"Deadline"
 },
 {
-type:"text",
-comment:"normal",
+type:"input",
+inputType:"normal",
 label:"Status"
 },
 {
-type:"text",
-comment:"normal",
+type:"input",
+inputType:"normal",
 label:"Amount"
 },
 ]

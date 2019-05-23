@@ -57,11 +57,11 @@ class DataTable extends Component {
             this.setState({modalTable:tab})
         }
         const handleModifie=(newdata)=>{
-            this.props.modifieColum(newdata,this.state.modifieLigne)
+            this.props.modifieColum(newdata.map(el=>{return(el.value)}),this.state.modifieLigne)
             handleClose()
         }
         const handleAdd=(newdata)=>{
-            this.props.addColumn(newdata)
+            this.props.addColumn(newdata.map(el=>{return(el.value)}))
             handleCloseAdd()
         }
         return (
@@ -74,7 +74,7 @@ class DataTable extends Component {
                         <Modal.Title>Modifie Ligne</Modal.Title>
                     </Modal.Header>
                     <Modal.Body id="modaleBody" >
-                    <GenericForme data={data[this.state.modifieLigne]} config={column} modifiefunction={handleModifie} />
+                    <GenericForme modifiefunction={handleModifie}  data={column.map((el,i)=>{return{...el,value:data[this.state.modifieLigne||0][i]}})}  />
 
                     </Modal.Body>
 
@@ -84,7 +84,7 @@ class DataTable extends Component {
                         <Modal.Title>Modifie Ligne</Modal.Title>
                     </Modal.Header>
                     <Modal.Body  id="modaleBody" >
-                    <GenericForme data={[]} config={column} modifiefunction={handleAdd} />
+                    <GenericForme  data={column} modifiefunction={handleAdd} />
 
                     </Modal.Body>
 

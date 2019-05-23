@@ -66,23 +66,23 @@ class NavBar extends Component {
                   </NavDropdown>
                 )
               }
-              else if (el.type === "secenddropdown") {
-                return (
-                  <DropdownButton drop="down"  variant="secondary" title={el.name}>
-                    {el.childrens.map(element => {
-                      if (element.type == "normal") { return <Dropdown.Item href={element.adresee} >{element.name}</Dropdown.Item> }
-                      else {
+              // else if (el.type === "secenddropdown") {
+              //   return (
+              //     <DropdownButton drop="down"  variant="secondary" title={el.name}>
+              //       {el.childrens.map(element => {
+              //         if (element.type == "normal") { return <Dropdown.Item href={element.adresee} >{element.name}</Dropdown.Item> }
+              //         else {
                        
-                        return (
-                          <DropdownButton drop="right" variant="secondary" title={element.name}> 
-                            {element.grandChildrens.map(element0 => { return (<Dropdown.Item href={element.adresee0} >{element0.name}</Dropdown.Item>) })}
-                            </DropdownButton>
-                        )
-                      }
-                    })}
-                 </DropdownButton>
-                )
-              }
+              //           return (
+              //             <DropdownButton drop="right" variant="secondary" title={element.name}> 
+              //               {element.grandChildrens.map(element0 => { return (<Dropdown.Item href={element.adresee0} >{element0.name}</Dropdown.Item>) })}
+              //               </DropdownButton>
+              //           )
+              //         }
+              //       })}
+              //    </DropdownButton>
+              //   )
+              // }
               else if (el.type === "logo") {
                 return (
                   <Navbar.Brand  ><Link to="/"> <img alt={el.name} src={el.src} width="20" /></Link></Navbar.Brand>
