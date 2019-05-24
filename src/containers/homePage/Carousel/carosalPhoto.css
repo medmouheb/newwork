@@ -1,0 +1,7 @@
+.CarouselCountainer{
+    display: flex;
+    justify-content: center;
+}
+.CarouselSlides{
+    width:700px
+}

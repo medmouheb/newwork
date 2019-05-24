@@ -4,6 +4,8 @@ class Footer extends Component {
     render() {
       return (
         <footer  class="page-footer font-small unique-color-dark">
+          <br/>
+          <br/>
 
         <div className="footerHeader" >
           <div class="container">

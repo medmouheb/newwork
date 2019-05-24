@@ -6,7 +6,7 @@ import ProductListViewer from './productListViewer/productListViewer'
 import NavBar from '../common/navbar/navbar'
 import Footer from '../common/footer/footer'
 import CategoriesNav from '../common/cleanNav/categoriesNav'
-
+import FixedDownBar from '../common/fixed down bar/fixedDownBar'
 class ProductListe extends Component {
     render() {
         const {discountProduct,CategorieTab,menu,footer} = this.props
@@ -17,6 +17,7 @@ class ProductListe extends Component {
                 <Row>
                     <ProductListViewer/>
                     <CarousalProduct data={discountProduct} />
+                    <FixedDownBar/>
                 </Row>
                 <Footer data={footer}/>
             </Container>

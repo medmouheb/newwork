@@ -16,12 +16,29 @@ class NavBar extends Component {
       <Form className="navbarPopover">
         <Form.Group controlId="formBasicEmail">
           <br />
+          <Form.Control type="email" placeholder="Enter email" />
+        </Form.Group>
+
+        <Form.Group controlId="formBasicPassword">
+          <Form.Control type="password" placeholder="Password" />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+      </Button>
+      </Form>
+    )
+    const signupPopover = (
+      <Form className="navbarPopover">
+        <Form.Group controlId="formBasicEmail">
+          <br />
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" />
+          <Form.Label>conform password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
         <Button variant="primary" type="submit">
@@ -31,8 +48,10 @@ class NavBar extends Component {
     )
     const WhenConnected = (
       <Form inline style={{ display: !this.props.isConnected ? "" : "none" }}>
+        <OverlayTrigger trigger="focus"  overlay={signupPopover}>
         <Button className="signUpButton" size="sm" variant="outline-primary">Sign up</Button>
-        <OverlayTrigger trigger="focus" placement="right" overlay={popover}>
+        </OverlayTrigger>
+        <OverlayTrigger trigger="focus"  overlay={popover}>
           <Button size="sm" variant="outline-success">Log in</Button>
         </OverlayTrigger>
       </Form>
