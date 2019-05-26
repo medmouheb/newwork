@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Card,Badge,Button } from "react-bootstrap"
+import { Card,Badge } from "react-bootstrap"
 import './fixedDownBar.css'
 class FixedDownBar extends Component {
     state = {
@@ -30,12 +30,14 @@ class FixedDownBar extends Component {
                     })}
                 </div>
                 <div className="FixedDownBarButtons" >
-                    <div>
-                        <Button onClick={() => { this.setState({ show: !this.state.show }) }}>show product</Button>
+                    <div onClick={() => { this.setState({ show: !this.state.show }) }}>
+                        <h2>show product<img style={{width:"20px"}} src="https://image.flaticon.com/icons/svg/25/25756.svg"/></h2>
                     </div>
                     <div style={{position:"relative"}}>
-                        <img src="https://image.flaticon.com/icons/svg/172/172138.svg" style={{width:"80px"}}/>
-                        <Badge className="ShoppingCarBadge" variant="danger">{products.length}</Badge>
+                        <h2>
+                            Ma liste d'envies
+                            <Badge  variant="danger">{products.length}</Badge>
+                        </h2>
                     </div>
                 </div>
             </div>

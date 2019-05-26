@@ -144,7 +144,7 @@ class Autocomplete extends Component {
     return (
 
 
-      <Fragment className="search" >
+      <Fragment>
         <InputGroup >
           <FormControl
             onBlur={() => { this.setState({ showSuggestions: false }) }}

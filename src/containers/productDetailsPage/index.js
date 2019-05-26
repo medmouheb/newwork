@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import NavBar from '../common/navbar/navbar'
 import Footer from '../common/footer/footer'
 import CategoriesNav from '../common/cleanNav/categoriesNav'
+import FixedDownBar from '../common/fixed down bar/fixedDownBar'
+
 class Productdetail extends Component{
     render(){
         const { sidemenu,ProductImagelist,CategorieTab,menu,footer} = this.props
@@ -16,6 +18,7 @@ class Productdetail extends Component{
                 <Sidebar data={sidemenu}/>
                 <GoodZoom data={ProductImagelist}/>
                 <Footer data={footer}/>
+                <FixedDownBar/>
             </div>
         )
     }

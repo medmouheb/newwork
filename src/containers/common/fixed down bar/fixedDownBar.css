@@ -2,7 +2,8 @@
     background-color: #e6d49d;
      position: fixed;
      bottom: 0px;
-     width: 100% 
+     width: 100% ;
+     z-index: 6;
 }
 .FixedDownBarButtons{
     display: flex;
