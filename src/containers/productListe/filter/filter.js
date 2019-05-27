@@ -96,8 +96,16 @@ class Filter extends Component {
                 })}
 
                 <div className="price-slider" >
-                    <input onChange={(e)=>{this.setState({priceFrom:e.target.value})}} defaultValue={0} min={0} max={100} step="0.5" type="range" oninput="updatePriceLabels()" />
-                    <input onChange={(e)=>{this.setState({priceTo:e.target.value})}} defaultValue={100} min={0} max={100} step="0.5" type="range" oninput="updatePriceLabels()" />
+                    <div style={{display:"flex",justifyContent:"space-around"}}>
+                        <div>
+                            {this.state.priceFrom}£
+                        </div>
+                        <div>
+                            {this.state.priceTo}£
+                        </div>
+                    </div>
+                    <input onChange={(e)=>{this.setState({priceFrom:e.target.value})}} defaultValue={0} min={0} max={100} step="1" type="range" oninput="updatePriceLabels()" />
+                    <input onChange={(e)=>{this.setState({priceTo:e.target.value})}} defaultValue={100} min={0} max={100} step="1" type="range" oninput="updatePriceLabels()" />
                 </div>
             </div>
         )

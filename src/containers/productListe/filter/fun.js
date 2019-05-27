@@ -1,6 +1,7 @@
 
   function updatePriceLabels() {
     //avoids slider overlap
+console.log('yow')
     var sliders = document.querySelectorAll(".price-slider input");
     var val1 = parseInt(sliders[0].value);
     var val2 = parseInt(sliders[1].value);
@@ -20,3 +21,4 @@
         sliders[0].style.background = sliders[1].style.background = '';
     }
 }
+export {updatePriceLabels}
