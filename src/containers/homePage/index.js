@@ -7,7 +7,7 @@ import Footer from '../common/footer/footer'
 import CategoriesNav from '../common/cleanNav/categoriesNav'
 import { connect } from 'react-redux'
 import {Container} from 'react-bootstrap';
-
+import FixedDownBar from '../common/fixed down bar/fixedDownBar'
 class Homepage extends Component{
     render(){
         const {discountProduct,BigSaleSRC,CarouselPhotos,CategorieTab,menu,footer} = this.props
@@ -18,6 +18,7 @@ class Homepage extends Component{
                   <BigSale data={BigSaleSRC}/>
                   <CarousalProduct data={discountProduct}/>
                 <CarouselPhoto data={CarouselPhotos}/>
+                <FixedDownBar/>
               <Footer data={footer}/>
             </Container>
         )

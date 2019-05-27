@@ -30,7 +30,6 @@ class GenericForme extends Component{
         return (
 
             <Form>
-                {console.log('hey',this.state.table)}
                 {this.state.table.map((element,index) => {
                     switch (element.type) {
                         case "input":

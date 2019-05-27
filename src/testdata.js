@@ -302,43 +302,43 @@ let discountProduct=[
       name:"Festina Montre Femme – Silver - Garantie 2 Ans",
       src:"https://tn.jumia.is/b9vGKs3OcfTu9y_-ZVFcEPeocMg=/fit-in/500x500/filters:fill(white):sharpen(1,0,false):quality(100)/product/20/6101/1.jpg?4324",
       discount:"-50%",
-      price:"160  TND",
-      odldPrice:"320  TND"
+      price:160  ,
+      odldPrice:320  
   },
   {
       name:"Fossil Montre Homme - Cuir - fs5280 - Garantie 2 Ans",
       src:"https://tn.jumia.is/THRYxLOjULe2VR8z1eCCX3X1SDI=/fit-in/500x500/filters:fill(white):sharpen(1,0,false):quality(100)/product/82/306/1.jpg?0944",
       discount:"-30%",
-      price:"438  TND",
-      odldPrice:"625  TND"
+      price:438  ,
+      odldPrice:625  
   },
   {
       name:"Festina Montre Homme - Fond Noir - Garantie 2 Ans",
       src:"https://tn.jumia.is/ZJqcu71hziRYbU0aqS8RuJIOeHs=/fit-in/500x500/filters:fill(white):sharpen(1,0,false):quality(100)/product/49/3531/1.jpg?7084",
       discount:"-50%",
-      price:"235  TND",
-      odldPrice:"470  TND"
+      price:235  ,
+      odldPrice:470  
   },
   {
       name:"TOMMY HILFIGER Montre Homme - 1791243 - Garantie 2 Ans",
       src:"https://tn.jumia.is/59d1_fs0PoLsN-VMOyl19lTZZcw=/fit-in/500x500/filters:fill(white):sharpen(1,0,false):quality(100)/product/27/244/1.jpg?4965",
       discount:"-40%",
-      price:"373  TND",
-      odldPrice:"621  TND"
+      price:373  ,
+      odldPrice:621  
   },
   {
       name:"TOMMY HILFIGER Montre Homme - 1791242 - Garantie 2 Ans",
       src:"https://tn.jumia.is/wj2ww14eRcD3tl3MbUW_BUgs7Z4=/fit-in/500x500/filters:fill(white):sharpen(1,0,false):quality(100)/product/94/244/1.jpg?0013",
       discount:"-40%",
-      price:"373  TND",
-      odldPrice:"621  TND"
+      price:373  ,
+      odldPrice:621  
   },
   {
       name:"Fossil Montre Homme - FS5440 - Marron - Garantie 2 Ans",
       src:"https://tn.jumia.is/m7Jjk98fZ6UnD264SZ_CWy8LZQg=/fit-in/500x500/filters:fill(white):sharpen(1,0,false):quality(100)/product/24/817/1.jpg?2144",
       discount:"-20%",
-      price:"396  TND",
-      odldPrice:"495  TND"
+      price:396  ,
+      odldPrice:495  
   }
 ]
 const sidemenu=[
@@ -494,108 +494,8 @@ const BigSaleSRC=[
   ]
 ]
 const CarouselPhoto=[
-{ name:"liste",
-   category:[
-   {
-     name:"product k",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-     name:"product j",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-     name:"product ll",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-     name:"product kk",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-     name:"product 154",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-     name:"product 0000",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-    name:"product k",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product j",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product ll",
-    list:["product 1","product 2","product 3"]
-  },
-  {
-    name:"product kk",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product 154",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
- ]},
-{ name:"liste",
-   category:[
-   {
-     name:"product k",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-     name:"product j",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-     name:"product ll",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-     name:"product kk",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-     name:"product 154",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-     name:"product 0000",
-     list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-   },
-   {
-    name:"product k",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product j",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product ll",
-    list:["product 1","product 2","product 3"]
-  },
-  {
-    name:"product kk",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11","product 7","product 56","product 8","product 11"]
-  },
-  {
-    name:"product 154",
-    list:["product 1","product 2","product 3","product 7","product 56","product 8","product 11"]
-  },
- ]},
-  {
-      src:"http://lorempixel.com/output/cats-q-c-640-480-1.jpg",
-      paragraph:"Legend 1"
-  },
-  {
-      src:"http://lorempixel.com/output/cats-q-c-640-480-2.jpg",
-      paragraph:"Legend 2"
-  },
+
+
   {
       src:"http://lorempixel.com/output/cats-q-c-640-480-3.jpg",
       paragraph:"Legend 3"

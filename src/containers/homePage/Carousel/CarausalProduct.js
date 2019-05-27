@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
-import { Card } from 'react-bootstrap';
+import { Card,Button } from 'react-bootstrap';
 import './CarausalProduct.css'
-
+import { connect } from 'react-redux'
+import {addItem} from '../../../store/actions/shoppingCart' 
+import {addToWishList} from '../../../store/actions/wishList'
 class CarousalProduct extends Component {
   state = {
     currentIndex: 0,
@@ -15,17 +17,19 @@ class CarousalProduct extends Component {
     return (
       this.props.data.map((el, i) => {
         return (
-          <Card onClick={() => { this.setState({ currentIndex: i }) }} style={{ minHeight: "100%" }}>
+          <Card style={{ minHeight: "100%" }}>
             <div className="discountpercent">{el.discount}</div>
             <Card.Img variant="top" src={el.src} />
             <Card.Body>
               {el.name}
               <Card.Text>
-                {el.price}
+                {el.price} DT
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <small className="text-muted">{el.odldPrice}</small>
+              <small className="text-muted">{el.odldPrice}  DT</small>
+             < Button onClick={()=>{this.props.addItem(el)}} variant="primary">add to card</Button>
+              <img src="https://image.flaticon.com/icons/svg/60/60993.svg"  style={{width:"20px"}} onClick={(e)=>{this.props.addToWishList(el) ;e.target.src="https://image.flaticon.com/icons/svg/148/148836.svg"}}/>
             </Card.Footer>
           </Card>
         )
@@ -76,4 +80,10 @@ class CarousalProduct extends Component {
   }
 }
 
-export default CarousalProduct
+const mapDispatchToProps = (dispatch) => {
+  return {
+      addItem: (data) => dispatch(addItem(data)),
+      addToWishList: (data) => dispatch(addToWishList(data)),
+  }
+}
+export default connect(null, mapDispatchToProps)(CarousalProduct)

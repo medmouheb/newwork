@@ -12,6 +12,8 @@ import Conformation from './conformation/conformation'
 import { connect } from 'react-redux'
 import NavBar from '../common/navbar/navbar'
 import Footer from '../common/footer/footer'
+import FixedDownBar from '../common/fixed down bar/fixedDownBar'
+
 import './tunnel.css'
 class Tunnel extends Component {
     state={
@@ -50,6 +52,8 @@ class Tunnel extends Component {
                   
                     
             </BrowserRouter>
+            <FixedDownBar/>
+
             <Footer data={footer}/>
             </div>
         )

@@ -1,40 +1,85 @@
 import React, { Component } from 'react';
 import Searchbar from './searchbar/searchbar'
-
-import {DropdownButton,Dropdown, Badge, Navbar, Form, Button, Nav, NavDropdown,OverlayTrigger } from 'react-bootstrap';
+import GenericForme from '../../dataTable/genericForm/genericform'
+import {Modal,DropdownButton,Dropdown, Badge, Navbar, Form, Button, Nav, NavDropdown,OverlayTrigger,Overlay } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
 import './navbar.css'
+import {userLogin} from '../../../store/actions/login'
+import {userSignup} from '../../../store/actions/signup'
 
+let signupData=[
+  {
+    type:"input",
+    inputType:"email",
+    label:"email"
+  },
+  {
+    type:"input",
+    inputType:"password",
+    label:"password"
+  },
+  {
+    type:"input",
+    inputType:"password",
+    label:"conform password"
+  }
+]
+let loginData=[
+  {
+    type:"input",
+    inputType:"email",
+    label:"email"
+  },
+  {
+    type:"input",
+    inputType:"password",
+    password:"password"
+  }
+]
 class NavBar extends Component {
+    state = {
+      showSignUP: false,
+      showLogIn: false,
+    }
 
 
   render() {
 
+    const { showLogIn,showSignUP } = this.state;
 
-    const popover = (
-      <Form className="navbarPopover">
-        <Form.Group controlId="formBasicEmail">
-          <br />
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-        </Form.Group>
-
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-      </Button>
-      </Form>
+    const LoginPopover = (
+      <Modal  show={showLogIn} onHide={()=>{this.setState({showLogIn:false})}}>
+        <GenericForme modifiefunction={(data)=>{this.props.userLogin(data);this.setState({showLogIn:false})}} data={loginData}/>
+      </Modal>
+    )
+    const signupPopover = (
+      <Modal  show={showSignUP} onHide={()=>{this.setState({showSignUP:false})}}>
+        <GenericForme modifiefunction={(data)=>{this.props.userSignup(data);this.setState({showSignUP:false})}} data={signupData}/>
+      </Modal>
     )
     const WhenConnected = (
       <Form inline style={{ display: !this.props.isConnected ? "" : "none" }}>
-        <Button className="signUpButton" size="sm" variant="outline-primary">Sign up</Button>
-        <OverlayTrigger trigger="focus" placement="right" overlay={popover}>
-          <Button size="sm" variant="outline-success">Log in</Button>
-        </OverlayTrigger>
+        <Button
+          variant="danger"
+          className="signUpButton" 
+          size="sm" 
+          variant="outline-primary"
+          onClick={() => this.setState({ showSignUP: true })}
+        >
+          Sign up
+        </Button>
+          {signupPopover}
+        
+        <Button
+          variant="outline-success"
+          size="sm"
+          onClick={() => this.setState({ showLogIn: true })}
+        >
+          Log in
+        </Button>
+          {LoginPopover}
+
       </Form>
     )
     const WhenDisconnected = (
@@ -113,5 +158,10 @@ const mapStateToProps = (state) => {
 
   }
 }
-
-export default connect(mapStateToProps)(NavBar);
+const mapDispatchToProps = (dispatch) => {
+  return {
+      userLogin: (user) => dispatch(userLogin(user)),
+      userSignup: (newuser) => dispatch(userSignup(newuser))
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(NavBar);
