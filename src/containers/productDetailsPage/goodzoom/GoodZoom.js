@@ -10,6 +10,47 @@ class GoodZoom extends Component {
             hide: true
         };
     }
+    imageZoom() {
+        var img, lens, result, cx, cy;
+        img = this.refs.myimage;
+        result = this.refs.myresult;
+        lens = this.refs.lens
+        cx = result.offsetWidth / lens.offsetWidth;
+        cy = result.offsetHeight / lens.offsetHeight;
+        result.style.backgroundImage = "url('" + img.src + "')";
+        result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+        lens.addEventListener("mousemove", moveLens);
+        img.addEventListener("mousemove", moveLens);
+        lens.addEventListener("touchmove", moveLens);
+        img.addEventListener("touchmove", moveLens);
+        function moveLens(e) {
+            var pos, x, y;
+            e.preventDefault();
+            pos = getCursorPos(e);
+            x = pos.x - (lens.offsetWidth / 2);
+            y = pos.y - (lens.offsetHeight / 2);
+            if (x > img.width - lens.offsetWidth) { x = img.width - lens.offsetWidth; }
+            if (x < 0) { x = 0; }
+            if (y > img.height - lens.offsetHeight) { y = img.height - lens.offsetHeight; }
+            if (y < 0) { y = 0; }
+            lens.style.left = x + "px";
+            lens.style.top = y + "px";
+            result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+        }
+        function getCursorPos(e) {
+            var a, x = 0, y = 0;
+            e = e || window.event;
+            a = img.getBoundingClientRect();
+            x = e.pageX - a.left;
+            y = e.pageY - a.top;
+            x = x - window.pageXOffset;
+            y = y - window.pageYOffset;
+            return { x: x, y: y };
+        }
+    }
+    componentDidMount() {
+        setTimeout(this.imageZoom(), 300)
+    }
     render() {
         const imageZoom = () => {
             var img, lens, result, cx, cy;
@@ -56,10 +97,10 @@ class GoodZoom extends Component {
         const handlehide = () => {
 
             this.setState({ hide: true })
-            imageZoom()
         }
         const handleShow = () => {
             this.setState({ hide: false })
+            imageZoom()
         }
         return (
             <div className="img-zoom-container">
@@ -79,49 +120,38 @@ class GoodZoom extends Component {
                             })}
                         </div>
                     </div>
-
-                    <div style={{ display: this.state.hide ? "none" : "", margin: "20px" }} id="myresult" ref="myresult" className="img-zoom-result" />
-                    <div style={{ display: !this.state.hide ? "none" : "", margin: "20px" }}>
-                        <Card style={{ width: '18rem', margin: "20px" }}>
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                    <div style={{position:"relatif"}}> 
+                        <div style={{visibility: this.state.hide ? "hidden" : "", position:"absolute" ,zIndex:"1",width:"500px", margin: "20px" }} id="myresult" ref="myresult" className="img-zoom-result" />
+                        <div style={{ margin: "20px" }}>
+                            <Card style={{ width: '18rem', margin: "20px" }}>
+                                <Card.Body>
+                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                                    <Card.Text>
+                                        Some quick example text to build on the card title and make up the bulk of
+                                        the card's content.
                                 </Card.Text>
-                                <Card.Link href="#">Card Link</Card.Link>
-                                <Card.Link href="#">Another Link</Card.Link>
-                            </Card.Body>
-                        </Card>
+                                    <Card.Link href="#">Card Link</Card.Link>
+                                    <Card.Link href="#">Another Link</Card.Link>
+                                </Card.Body>
+                            </Card>
+                        </div>
                     </div>
                 </div>
                 <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>1(cle)</td>
+                            <td>Mark(valeur)</td>
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>2(cle)</td>
+                            <td>Jacob(valeur)</td>
+
                         </tr>
                         <tr>
-                            <td>3</td>
-                            <td colSpan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>3(cle)</td>
+                            <td >Larry the Bird(valeur)</td>
                         </tr>
                     </tbody>
                 </Table>
