@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Card, Badge } from "react-bootstrap"
 import ShoppingCart from "../../tunnel/shopping cart/shoppingCart"
 import './fixedDownBar.css'
+import ListCard from '../../productListe/productListViewer/grid/cards/listCard'
 class FixedDownBar extends Component {
     state = {
         show: ""
@@ -14,19 +15,7 @@ class FixedDownBar extends Component {
                 <div className="FixedDownBarProductswishListe" style={{ display: this.state.show==="wishListe" ? "" : "none" }}>
                     {products.map((el) => {
                         return (
-                            <Card>
-                                <div className="shippingCard" >
-                                    <div>
-                                        <img width="50" src={el.src} />
-                                    </div>
-                                    <Card.Body>
-                                        <Card.Title>{el.name}</Card.Title>
-                                        <Card.Text style={{ display: "flex" }}>
-                                            {el.description}
-                                        </Card.Text>
-                                    </Card.Body>
-                                </div>
-                            </Card>
+                            <ListCard data={el} cardType="wishList" />
                         )
                     })}
                 </div>

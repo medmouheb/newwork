@@ -24,3 +24,4 @@ class DiscountList extends Component {
 }
 
 export default DiscountList
+{/* <ListCard handleShow={this.handleShow}  data={el} cardIndex={i} ardType = "shopping" /> */}

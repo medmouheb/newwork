@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Modal, Button, Card, Badge } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { Link} from "react-router-dom";
-
+import ListCard from '../../productListe/productListViewer/grid/cards/listCard'
 import { removeItem, addSameItem, removeSameItem } from '../../../store/actions/shoppingCart'
 import './shoppingCart.css'
 class ShoppingCart extends Component {
@@ -50,27 +50,7 @@ class ShoppingCart extends Component {
                     <div >
                         {this.props.items.map((el, i) => {
                             return (
-                                <Card>
-                                    <div className="shippingCard" >
-                                        <div>
-                                            <img width="200" src={el.src} />
-                                        </div>
-                                        <Card.Body>
-                                            <Card.Title>{el.name}</Card.Title>
-                                            <Card.Text style={{ display: "flex" }}>
-                                                <div>
-                                                    {el.description}
-                                                </div>
-                                                <div>
-                                                    <Button variant="danger" onClick={() => { this.handleShow(i) }} >remove</Button>
-                                                </div>
-                                            </Card.Text>
-                                            <Button variant="primary" onClick={() => { this.props.addSameItem(i) }}>+</Button>
-                                            <span>{this.props.itemsNumber[i]}</span>
-                                            <Button variant="primary" onClick={() => { this.props.itemsNumber[i] == 1 ? this.handleShow(i) : this.props.removeSameItem(i) }}>-</Button>
-                                        </Card.Body>
-                                    </div>
-                                </Card>
+                                <ListCard handleShow={this.handleShow}  data={el} cardIndex={i} cardType = "shopping" />
                             )
                         })}
                     </div>
