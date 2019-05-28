@@ -129,6 +129,8 @@ class DataTable extends Component {
                             return (
                                 <tr style={{ backgroundColor: this.state.selectedLigne === i ? "gray" : "" }} onClick={() => { handleSelect(i);actualSelect(el) }}>
                                     {el.map((el0, i) => {
+                                        if(column[i].type==="img"){return(<td><img style={{height:"40px",width:"40px"}} src={el0}/></td>)}
+                                        else if(column[i].inputType==="url"){return(<td><a href={el0}>{el0}</a></td>)}
                                         return (<td>{el0}</td>)
                                     })}
                                     <td>

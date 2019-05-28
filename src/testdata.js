@@ -702,41 +702,41 @@ const CategorieTab=[
  ]
 
 const testTableData=[
-[ "1" , 	"Alphabet puzzle", 	"2016/01/15" ,	"Done",	"1000"]	,
-[ "2", 	"Layout for poster", 	"2016/01/31",	"Planned",	"1834"],	
-[ "3", 	"Image creation", 	"2016/01/23",	"To Do",	"1500"]	,
-[ "4", 	"Create font", 	"2016/02/26",	"Done",	"1200"]	,
-[ "5", 	"Sticker production", 	"2016/02/18",	"Planned"	,"2100"],	
-[ "6", 	"Glossy poster", 	"2016/03/17"	,"To Do",	"899"	],
-[ "7", 	"Beer label", 	"2016/05/28",	"Confirmed",	"2499"],	
-[ "8", 	"Shop sign"	, "2016/04/19",	"Offer"	,"1099"]	,
-[ "9", 	"X-Mas decoration", 	"2016/10/31",	"Confirmed",	"1750"],	
-[ "10", 	"Halloween invite"	, "2016/09/12"	,"Planned",	"400"]	,
-[ "11", 	"Wedding announcement"	, "2016/07/09"	,"To Do",	"299"],	
-[ "12"	, "Member pasport", 	"2016/06/22",	"Offer",	"149"	],
-[ "13"	, "Drink tickets", 	"2016/11/01",	"Confirmed"	,"199"],	
-[ "14"	, "Album cover	", "2017/03/15",	"To Do",	"4999"	],
-[ "15"	, "Shipment box", 	"2017/02/08"	,"Offer"	,"1399"]	,
-[ "16"	, "Wooden puzzle", 	"2017/01/11",	"Done"	,"1000"]	,
-[ "17"	, "Fashion Layout", 	"2016/01/30",	"Planned"	,"1834"	],
-[ "18"	, "Toy creation", 	"2016/01/10",	"To Do",	"1550"]	,
-[ "19"	, "Create stamps"	, "2016/02/26"	,"Done",	"1220"]	,
-[ "20"	, "Sticker design", 	"2017/02/18",	"Planned"	,"2100"],	
-[ "21"	, "Poster rock concert", 	"2017/04/17"	,"To Do"	,"899"],	
-[ "22"	, "Wine label", 	"2017/05/28",	"Confirmed",	"2799"]	,
-[ "23", "	Shopping bag"	, "2017/04/19"	,"Offer",	"1299"]	,
-[ "24", 	"Decoration for Easter", 	"2017/10/31",	"Confirmed"	,"1650"],	
-[ "25"	, "Saint Nicolas colorbook"	, "2017/09/12"	,"Planned",	"510"]	,
-[ "26"	, "Wedding invites	", "2017/07/09",	"To Do"	,"399"	],
-[ "27", 	"Member pasport", 	"2017/06/22",	"Offer"	,"249"]	,
-[ "28", 	"Drink tickets"	, "2017/11/01"	,"Confirmed"	,"199"	],
-[ "29", 	"Blue-Ray cover"	, "2018/03/15	","To Do",	"1999"]	,
-[ "30"	, "TV carton", 	"2019/02/08",	"Offer",	"1369"]
+[ "1" , 	"Alphabet puzzle", 	"2016/01/15" ,	"Done",	"1000","",""]	,
+[ "2", 	"Layout for poster", 	"2016/01/31",	"Planned",	"1834","",""],	
+[ "3", 	"Image creation", 	"2016/01/23",	"To Do",	"1500","",""]	,
+[ "4", 	"Create font", 	"2016/02/26",	"Done",	"1200","",""]	,
+[ "5", 	"Sticker production", 	"2016/02/18",	"Planned"	,"2100","",""],	
+[ "6", 	"Glossy poster", 	"2016/03/17"	,"To Do",	"899"	,"",""],
+[ "7", 	"Beer label", 	"2016/05/28",	"Confirmed",	"2499","",""],	
+[ "8", 	"Shop sign"	, "2016/04/19",	"Offer"	,"1099","",""]	,
+[ "9", 	"X-Mas decoration", 	"2016/10/31",	"Confirmed",	"1750","",""],	
+[ "10", 	"Halloween invite"	, "2016/09/12"	,"Planned",	"400","",""]	,
+[ "11", 	"Wedding announcement"	, "2016/07/09"	,"To Do",	"299","",""],
+[ "12"	, "Member pasport", 	"2016/06/22",	"Offer",	"149"	,"",""],
+[ "13"	, "Drink tickets", 	"2016/11/01",	"Confirmed"	,"199","",""],	
+[ "14"	, "Album cover	", "2017/03/15",	"To Do",	"4999"	,"",""],
+[ "15"	, "Shipment box", 	"2017/02/08"	,"Offer"	,"1399","",""]	,
+[ "16"	, "Wooden puzzle", 	"2017/01/11",	"Done"	,"1000","",""]	,
+[ "17"	, "Fashion Layout", 	"2016/01/30",	"Planned"	,"1834"	,"",""],
+[ "18"	, "Toy creation", 	"2016/01/10",	"To Do",	"1550","",""]	,
+[ "19"	, "Create stamps"	, "2016/02/26"	,"Done",	"1220","",""]	,
+[ "20"	, "Sticker design", 	"2017/02/18",	"Planned"	,"2100","",""],	
+[ "21"	, "Poster rock concert", 	"2017/04/17"	,"To Do"	,"899","",""],	
+[ "22"	, "Wine label", 	"2017/05/28",	"Confirmed",	"2799","",""]	,
+[ "23", "	Shopping bag"	, "2017/04/19"	,"Offer",	"1299","",""],
+[ "24", 	"Decoration for Easter", 	"2017/10/31",	"Confirmed"	,"1650","",""],	
+[ "25"	, "Saint Nicolas colorbook"	, "2017/09/12"	,"Planned",	"510","",""]	,
+[ "26"	, "Wedding invites	", "2017/07/09",	"To Do"	,"399"	,"",""],
+[ "27", 	"Member pasport", 	"2017/06/22",	"Offer"	,"249","",""]	,
+[ "28", 	"Drink tickets"	, "2017/11/01"	,"Confirmed"	,"199","",""	],
+[ "29", 	"Blue-Ray cover"	, "2018/03/15	","To Do",	"1999","",""]	,
+[ "30"	, "TV carton", 	"2019/02/08",	"Offer",	"1369","https://myegy.to/","https://myegy.to/files/img/content/8/646/1558749261.200_300.jpg"]
 ]
 let testTableDataColumn=[
 {
   type:"input",
-  inputType:"normal",
+  inputType:"number",
   label:"Order"
 },
 {
@@ -746,7 +746,7 @@ label:"Description"
 },
 {
 type:"input",
-inputType:"normal",
+inputType:"date",
 label:"Deadline"
 },
 {
@@ -759,5 +759,15 @@ type:"input",
 inputType:"normal",
 label:"Amount"
 },
+{
+  type:"input",
+  inputType:"url",
+  label:"web site",
+},
+{
+  type:"img",
+  inputType:"url",
+  label:"image"
+}
 ]
 export {CategorieTab,footer,menu,images ,products,discountProduct,sidemenu,ZoomIMG,BigSaleSRC,CarouselPhoto,ProductImagelist,testTableData,testTableDataColumn}
