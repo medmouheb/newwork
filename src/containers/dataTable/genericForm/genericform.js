@@ -54,6 +54,22 @@ class GenericForme extends Component{
                                 </Form.Group>
                             )
                             break;
+                            case "img":
+                            return (
+                                <Form.Group >
+                                    <Form.Label>{element.label}</Form.Label>
+                                    <Form.Control
+                                        type={element.inputType}
+                                        name={element.name || ""}
+                                        readOnly={element.readOnly || false}
+                                        maxLength={element.maxlength || ""}
+                                        required={element.required || ""}
+                                        onChange={(e)=>{handleModalChange(index,e.target.value)}}
+                                        value={element.value}
+                                    />
+                                </Form.Group>
+                            )
+                            break;
                         case "select":
                             return (
                                 <Form.Group controlId="exampleForm.ControlSelect1">

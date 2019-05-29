@@ -82,7 +82,7 @@ class Filter extends Component {
                             </Button>
                             <div style={{ display: this.state.fadeBoolean[ind] ? "block" : "none" }} >
                                 <Fade in={this.state.fadeBoolean[ind]}>
-                                    <div id="example-fade-text">
+                                    <div style={{textAlign:"center"}} id="example-fade-text">
                                         {element.variety.map(el => {
                                             return (
                                                 <Form.Check onClick={(event) => { handleFilter(event, ind, el) }} type='checkbox' label={el} />
@@ -98,10 +98,10 @@ class Filter extends Component {
                 <div className="price-slider" >
                     <div style={{display:"flex",justifyContent:"space-around"}}>
                         <div>
-                            {this.state.priceFrom}£
+                            {this.state.priceFrom<this.state.priceTo?this.state.priceFrom:this.state.priceTo}£
                         </div>
                         <div>
-                            {this.state.priceTo}£
+                            {this.state.priceFrom>this.state.priceTo?this.state.priceFrom:this.state.priceTo}£
                         </div>
                     </div>
                     <input onChange={(e)=>{this.setState({priceFrom:e.target.value})}} defaultValue={0} min={0} max={100} step="1" type="range" oninput="updatePriceLabels()" />

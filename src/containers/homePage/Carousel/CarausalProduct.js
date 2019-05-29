@@ -6,6 +6,7 @@ import './CarausalProduct.css'
 import { connect } from 'react-redux'
 import {addItem} from '../../../store/actions/shoppingCart' 
 import {addToWishList} from '../../../store/actions/wishList'
+import GridCard from "../../productListe/productListViewer/grid/cards/gridCard"
 class CarousalProduct extends Component {
   state = {
     currentIndex: 0,
@@ -17,21 +18,7 @@ class CarousalProduct extends Component {
     return (
       this.props.data.map((el, i) => {
         return (
-          <Card style={{ minHeight: "100%" }}>
-            <div className="discountpercent">{el.discount}</div>
-            <Card.Img variant="top" src={el.src} />
-            <Card.Body>
-              {el.name}
-              <Card.Text>
-                {el.price} DT
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">{el.odldPrice}  DT</small>
-             < Button onClick={()=>{this.props.addItem(el)}} variant="primary">add to card</Button>
-              <img src="https://image.flaticon.com/icons/svg/60/60993.svg"  style={{width:"20px"}} onClick={(e)=>{this.props.addToWishList(el) ;e.target.src="https://image.flaticon.com/icons/svg/148/148836.svg"}}/>
-            </Card.Footer>
-          </Card>
+          <GridCard cardType="carosal" data={el}/>
         )
       })
     )

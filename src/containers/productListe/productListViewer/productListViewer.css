@@ -1,4 +1,9 @@
 .ProductListViewer{
-    background-color:rgb(102, 153, 255);
-    height:40px;
+    background-color:#f2f5f8;
+    height:auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    padding-top: 10px
 }
