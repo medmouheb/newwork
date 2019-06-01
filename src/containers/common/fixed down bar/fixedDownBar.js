@@ -9,42 +9,52 @@ class FixedDownBar extends Component {
         show: ""
     }
     render() {
-        const { products } = this.props
+        const { products,items } = this.props
         return (
-            <div className="FixedDownBar">
-                <div className="FixedDownBarProductswishListe" style={{ display: this.state.show==="wishListe" ? "" : "none" }}>
+            <div className="FixedDownBar"  >
+                <div className="FixedDownBarProductswishListe"  style={{ position: "relatif", display: this.state.show === "wishListe" ? "" : "none" }}>
+                    <Badge  style={{position:"absolute",top:"0px",right:"0px",zIndex:"2"}} 
+                            variant="danger" onClick={() => { this.setState({ show: "" }) }}>
+                            X
+                    </Badge>
                     {products.map((el) => {
                         return (
                             <ListCard data={el} cardType="wishList" />
                         )
                     })}
                 </div>
-                <div className="FixedDownBarProductspanier" style={{ display: this.state.show==="panier" ? "" : "none" }}>
-                    <ShoppingCart/>
+                <div className="FixedDownBarProductspanier"  style={{ position: "relatif", display: this.state.show === "panier" ? "" : "none" }}>
+                    <Badge style={{position:"absolute",top:"0",right:"0",zIndex:"2"}} variant="danger" onClick={() => { this.setState({ show: "" }) }}>X</Badge>
+                    {items.map((el,i) => {
+                        return (
+                            <ListCard   data={el} cardIndex={i} cardType = "shoppingPannier" />
+                        )
+                    })}
                 </div>
                 <div className="FixedDownBarButtons" >
-                    <div style={{ position: "relative" }} onClick={() => { this.setState({ show:this.state.show===  "Derniers"?"":"Derniers"}) }}>
+                    <div style={{ position: "relative" }} onClick={() => { this.setState({ show: this.state.show === "Derniers" ? "" : "Derniers" }) }}>
                         <h3>
-                            Derniers produits vus 
+                            Derniers produits vus
                             <Badge variant="danger">{0}</Badge>
                         </h3>
                     </div>
-                    <div style={{ position: "relative" }} onClick={() => { this.setState({ show:this.state.show===  "wishListe"?"":"wishListe"}) }}>
+                    <div style={{ position: "relative" }}
+                         onClick={() => { this.setState({ show: this.state.show === "wishListe" ? "" : "wishListe" }) }}>
                         <h3>
                             Ma liste d'envies
-                            <Badge variant="danger">{products.length}</Badge>
+                            <Badge variant="danger">{this.props.wishListItemsNumber}</Badge>
                         </h3>
                     </div>
-                    <div style={{ position: "relative" }} onClick={() => { this.setState({ show:this.state.show=== "comparateur"?"":"comparateur"}) }}>
+                    <div style={{ position: "relative" }} onClick={() => { this.setState({ show: this.state.show === "comparateur" ? "" : "comparateur" }) }}>
                         <h3>
                             comparateur
                             <Badge variant="danger">{0}</Badge>
                         </h3>
                     </div>
-                    <div style={{ position: "relative" }} onClick={() => { this.setState({ show:this.state.show=== "panier"?"":"panier"}) }}>
+                    <div style={{ position: "relative" }} onClick={() => { this.setState({ show: this.state.show === "panier" ? "" : "panier" }) }}>
                         <h3>
                             panier
-                            <Badge variant="danger">{0}</Badge>
+                            <Badge variant="danger">{this.props.totalitems}</Badge>
                         </h3>
                     </div>
                 </div>
@@ -55,6 +65,9 @@ class FixedDownBar extends Component {
 const mapStateToProps = (state) => {
     return {
         products: state.WishListReducer.products,
+        wishListItemsNumber: state.WishListReducer.wishListItemsNumber,
+        totalitems: state.ShoppingCartReducer.totalitems,
+        items: state.ShoppingCartReducer.items,
 
     }
 }

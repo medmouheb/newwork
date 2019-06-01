@@ -7,18 +7,19 @@ import { connect } from 'react-redux'
 import {addItem} from '../../../store/actions/shoppingCart' 
 import {addToWishList} from '../../../store/actions/wishList'
 import GridCard from "../../productListe/productListViewer/grid/cards/gridCard"
+import DetailLight from '../../common/detailLight/index'
 class CarousalProduct extends Component {
   state = {
     currentIndex: 0,
     itemsInSlide: 1,
-    responsive: { 0: { items: window.screen.width <= 1000 ? 2 : 3 } },
+    responsive: { 0: { items: window.screen.width <= 1000 ? 2 : 4 } },
     galleryItems: this.galleryItems(),
   }
   galleryItems() {
     return (
       this.props.data.map((el, i) => {
         return (
-          <GridCard cardType="carosal" data={el}/>
+          <DetailLight cardType="carousal" data={el}/>
         )
       })
     )
@@ -58,6 +59,8 @@ class CarousalProduct extends Component {
           onInitialized={this.handleOnSlideChange}
           onSlideChanged={this.handleOnSlideChange}
           onResized={this.handleOnSlideChange}
+          dotsDisabled={true}
+          buttonsDisabled={true}
         />
         <div className="CarousalProductButton">
         <img src="https://image.flaticon.com/icons/svg/149/149123.svg" width={60} onClick={() => { this.setState({ currentIndex: this.state.currentIndex + 1 }) }}/>

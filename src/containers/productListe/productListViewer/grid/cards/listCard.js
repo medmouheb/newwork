@@ -19,7 +19,7 @@ class ListCard extends Component {
                             <Card.Text>
                                 {this.props.data.description}<br />
                                 {this.props.data.price}dt
-                                        </Card.Text>
+                            </Card.Text>
                             <Button onClick={() => { this.props.addItem(this.props.data) }} variant="primary">add to card</Button>
                             <img src="https://image.flaticon.com/icons/svg/60/60993.svg" style={{ width: "20px" }} onClick={(e) => { this.props.addToWishList(this.props.data); e.target.src = "https://image.flaticon.com/icons/svg/148/148836.svg" }} />
                         </Card.Body>
@@ -83,6 +83,8 @@ class ListCard extends Component {
                             <Card.Text style={{ display: "flex" }}>
                                 {this.props.data.description}
                             </Card.Text>
+                            <Button onClick={() => { this.props.addItem(this.props.data) }} variant="primary">add to card</Button>
+
                         </Card.Body>
                     </div>
                 </Card>
@@ -113,13 +115,39 @@ class ListCard extends Component {
                 </Card>
             )
         }
+        else if(this.props.cardType === "shoppingPannier"){
+            return(
+                <Card>
+                    <div className="shippingCard" >
+                        <div>
+                            <img width="50" src={this.props.data.src} />
+                        </div>
+                        <Card.Body>
+                            <Card.Title>{this.props.data.name}</Card.Title>
+                            <Card.Text style={{ display: "flex" }}>
+                                <div>
+                                    {this.props.data.description}
+                                </div>
+                                <div>
+                                    <Button variant="danger" onClick={() => {  this.props.removeItem(this.props.cardIndex) }} >remove</Button>
+                                </div>
+                            </Card.Text>
+                            <Button variant="primary" onClick={() => { this.props.addSameItem(this.props.cardIndex) }}>+</Button>
+                            <span>{this.props.itemsNumber[this.props.cardIndex]}</span>
+                            <Button variant="primary" onClick={() => { this.props.itemsNumber[this.props.cardIndex] == 1 ? this.props.handleShow(this.props.cardIndex) : this.props.removeSameItem(this.props.cardIndex) }}>-</Button>
+                        </Card.Body>
+                    </div>
+                </Card>
+            )
+        }
     }
 }
 const mapStateToProps = (state) => {
     return {
         items: state.ShoppingCartReducer.items,
         itemsNumber: state.ShoppingCartReducer.itemsNumber,
-
+        total: state.ShoppingCartReducer.total,
+        totalitems: state.ShoppingCartReducer.totalitems
     }
 }
 const mapDispatchToProps = (dispatch) => {

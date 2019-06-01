@@ -5,6 +5,7 @@ import { Link} from "react-router-dom";
 import ListCard from '../../productListe/productListViewer/grid/cards/listCard'
 import { removeItem, addSameItem, removeSameItem } from '../../../store/actions/shoppingCart'
 import './shoppingCart.css'
+import DetailLight from '../../common/detailLight'
 class ShoppingCart extends Component {
     constructor(props, context) {
         super(props, context);
@@ -50,7 +51,7 @@ class ShoppingCart extends Component {
                     <div >
                         {this.props.items.map((el, i) => {
                             return (
-                                <ListCard handleShow={this.handleShow}  data={el} cardIndex={i} cardType = "shopping" />
+                                <DetailLight handleShow={this.handleShow}  data={el} cardIndex={i} cardType = "shopping" />
                             )
                         })}
                     </div>
